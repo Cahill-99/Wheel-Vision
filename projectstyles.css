@@ -1,0 +1,214 @@
+body{
+    background-color:#2b2b2b;
+    margin:0;
+}
+
+
+
+/*Grid Settings*/
+
+.grid{
+    height:100vh;
+    display:grid;
+    align-items:center;
+    grid-template-columns:
+    [col-start] 1fr
+    [col-2] 1fr
+    [col-3] 1fr
+    [col-4] 1fr
+    [col-5] 1fr
+    [col-6] 1fr
+    [col-7] 1fr
+    [col-end];
+
+    grid-template-rows: 
+    1fr
+    1fr
+    1fr
+    1fr
+    1fr
+    1fr 
+    ;
+
+    grid-template-areas: 
+    "backarrow uparrow . . logo . . "
+    "wheelicon wheel1 carimage carimage carimage carimage carimage"
+    "filtericon wheel2 carimage carimage carimage carimage carimage"
+    "calipericon wheel3 carimage carimage carimage carimage carimage"
+    "colfiller wheel4 carimage carimage carimage carimage carimage"
+    "colfiller downarrow carimage carimage carimage carimage carimage"
+    ;
+
+    
+}
+
+
+
+
+/*Standard Settings*/
+
+.wheelstandard{
+    height:100px;
+    margin:auto;
+}
+
+.menustandard{
+    margin:auto;
+}
+
+.col1{
+    display:flex;
+}
+
+.col2{
+
+    height:100%;
+    width:100%;
+    display:flex;
+}
+
+
+
+/*Asset Settings*/
+
+.backbuttonimg{
+    grid-area:backarrow;
+    height:50px;
+    background-color:#161616;
+    margin:auto;
+    margin-left:50px;
+}
+.backbutton{
+    background-color:#161616;
+    height:100%;
+    border-bottom-right-radius: 8px;
+
+}
+
+
+
+.uparrow{
+
+    height:80px;
+}
+.uparrowimg{
+    grid-area:uparrow;
+    height:80px;
+}
+
+
+
+
+.logo{
+    grid-area: logo;
+    height:60px;
+}
+.logoimg{
+    height:60px;
+}
+
+
+
+.wheelicon{
+    grid-area:wheelicon;
+    height:100%;
+    width:100%;
+    background-color:#2b2b2b;
+}
+.wheeliconimg{
+    height:60px;
+}
+
+
+
+
+.calipericon{
+    grid-area:calipericon;
+    height:100%;
+    width:100%;
+    background-color:#161616;
+    border-top-right-radius: 8px;
+}
+.calipericonimg{
+    height:60px;
+}
+
+
+
+
+.filtericon{
+    grid-area:filtericon;
+    height:100%;
+    width:100%;
+    background-color:#2b2b2b;
+}
+
+.filtericonimg{
+    grid-area:filtericon;
+    height:60px;
+}
+
+
+
+
+
+
+.wheel1{
+    grid-area:wheel1;
+}
+
+.wheel2{
+    grid-area:wheel2;
+}
+.wheel3{
+    grid-area:wheel3;
+}
+.wheel4{
+    grid-area:wheel4;
+}
+
+
+
+
+.downarrow{
+    grid-area:downarrow;
+    height:80px;
+}
+
+.downarrowimg{
+    height:80px;
+}
+
+
+
+.colfiller{
+    grid-area:colfiller;
+    height:100%;
+    width:100%;
+    background-color:#161616;
+}
+
+
+
+
+
+/*Image Settings*/
+
+.carimage{
+    grid-area:carimage;
+    background-image: url("img/MySubaru.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:95%;
+    width:98%;
+    border:white;
+    border-style:solid;
+
+}
+.subarupic{
+    height: 100%;
+}
+
+
+
