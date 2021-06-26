@@ -32,10 +32,10 @@ body{
 
     grid-template-areas: 
     "backarrow uparrow . . logo . . "
-    "wheelicon wheel1 carimage carimage carimage carimage carimage"
-    "filtericon wheel2 carimage carimage carimage carimage carimage"
-    "calipericon wheel3 carimage carimage carimage carimage carimage"
-    "colfiller wheel4 carimage carimage carimage carimage carimage"
+    "wheelicon carcontainer carimage carimage carimage carimage carimage"
+    "filtericon carcontainer carimage carimage carimage carimage carimage"
+    "calipericon carcontainer carimage carimage carimage carimage carimage"
+    "colfiller carcontainer carimage carimage carimage carimage carimage"
     "colfiller downarrow carimage carimage carimage carimage carimage"
     ;
 
@@ -48,8 +48,8 @@ body{
 /*Standard Settings*/
 
 .wheelstandard{
-    height:100px;
-    margin:auto;
+    height:125.6px;
+    cursor:pointer;
 }
 
 .menustandard{
@@ -61,10 +61,7 @@ body{
 }
 
 .col2{
-
-    height:100%;
-    width:100%;
-    display:flex;
+    margin:auto;
 }
 
 
@@ -90,10 +87,19 @@ body{
 .uparrow{
 
     height:80px;
+
 }
 .uparrowimg{
     grid-area:uparrow;
     height:80px;
+    display:none;
+
+}
+
+.uparrowimg.show{
+    filter:brightness(100%);
+    display:block;
+    cursor:pointer;
 }
 
 
@@ -151,20 +157,19 @@ body{
 
 
 
-
-
-.wheel1{
-    grid-area:wheel1;
+.carousel-container{
+    grid-area:carcontainer;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
 }
 
-.wheel2{
-    grid-area:wheel2;
-}
-.wheel3{
-    grid-area:wheel3;
-}
-.wheel4{
-    grid-area:wheel4;
+.track{
+    transition: transform 0.3s;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
 }
 
 
@@ -173,12 +178,18 @@ body{
 .downarrow{
     grid-area:downarrow;
     height:80px;
+
 }
 
 .downarrowimg{
     height:80px;
+    cursor:pointer;
 }
 
+.downarrowimg.hide{
+    filter: brightness(30%);
+    display:none;
+}
 
 
 .colfiller{
@@ -208,6 +219,37 @@ body{
 }
 .subarupic{
     height: 100%;
+}
+
+
+.displayed-wheels{
+    display:none;
+}
+
+.displayed-wheels.show{
+    display:block;
+}
+.front-wheel{
+
+    position: relative;
+    z-index: 0;
+    height:120px;
+    top:395px;
+    left:215px;
+}
+
+.rear-wheel{
+
+    position: relative;
+    z-index: 0;
+    height:120px;
+    top:395px;
+    left:581px;
+}
+
+.wheel2img.border{
+    outline: 3px solid white;
+    outline-style: ridge;
 }
 
 
