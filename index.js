@@ -9,10 +9,12 @@ const trackHeight = document.querySelector(".track").offsetHeight;
 
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 
+
 let index = 0;
 
 //TEST ZONE
 console.log(carouselHeight);
+
 
 //UPARROW
 uparrow.addEventListener("click", () => {
@@ -34,7 +36,7 @@ downarrow.addEventListener("click", () => {
     uparrow.classList.add("show");
     console.log(trackHeight - (index * carouselHeight))
 
-    if (trackHeight - (index * carouselHeight) <= carouselHeight + 2) {
+    if (trackHeight - (index * carouselHeight) <= carouselHeight + 10) {
        downarrow.classList.add("hide");
 
     }

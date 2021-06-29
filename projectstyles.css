@@ -48,7 +48,7 @@ body{
 /*Standard Settings*/
 
 .wheelstandard{
-    height:125.6px;
+    height:16.6vh;
     cursor:pointer;
 }
 
@@ -159,7 +159,7 @@ body{
 
 .carousel-container{
     grid-area:carcontainer;
-    height:100%;
+    height:66vh;
     display:flex;
     flex-direction:column;
     overflow:hidden;
