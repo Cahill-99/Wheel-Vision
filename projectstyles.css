@@ -231,26 +231,35 @@ body{
 }
 .front-wheel{
 
-    position: relative;
-    z-index: 0;
+    position: absolute;
     height:120px;
-    top:395px;
-    left:215px;
+    -webkit-user-drag: none;
+    cursor: move;
+}
+
+.fw{
+    position:absolute;
+    height: 120px;
+    width: 120px;
+}
+
+.movefront{
+    height: 150px;
+    width: 150px;
+    background-color: blue;
 }
 
 .rear-wheel{
 
-    position: relative;
-    z-index: 0;
+    position: absolute;
     height:120px;
     top:395px;
     left:581px;
+    cursor: move;
 }
 
 .wheel2img.border{
     outline: 3px solid white;
     outline-style: ridge;
 }
-
-
 
