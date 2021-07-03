@@ -16,6 +16,12 @@ let index = 0;
 console.log(carouselHeight);
 
 
+
+
+
+
+
+
 //UPARROW
 uparrow.addEventListener("click", () => {
     index--
@@ -50,16 +56,18 @@ let wheelChoice = document.querySelector(".wheel2img");
 
 wheelChoice.addEventListener("click", () => {
     shownWheels.classList.toggle("show");
-    wheelChoice.classList.toggle("border");
+    wheelChoice.classList.toggle("selected");
 })
 
 
 //***** DRAGGABLE WHEELS *****
 
 
-//FRONT WHEEL
-const el = document.querySelector(".front-wheel");
+//FRONT OR REAR
+let activeWheel = document.querySelector(".front-wheel");
 
+//FRONT WHEEL
+const el = activeWheel;
 el.addEventListener("mousedown", mouseDown);
 
 function mouseDown(e) {
@@ -87,5 +95,7 @@ function mouseDown(e) {
         window.removeEventListener("mouseup", mouseUp);
     }
 }
+
+
 
 
