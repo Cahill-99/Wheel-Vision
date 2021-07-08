@@ -51,6 +51,7 @@ downarrow.addEventListener("click", () => {
 
 //***** WHEEL SHOW AND HIDE *****
 
+/*
 let shownWheels = document.querySelector(".displayed-wheels");
 let wheelChoice = document.querySelector(".wheel2img");
 
@@ -95,7 +96,71 @@ function mouseDown(e) {
         window.removeEventListener("mouseup", mouseUp);
     }
 }
+*/
 
+
+ 
+function printID(e) {
+    e = e || window.event;
+    e = e.target;
+
+    let chosenWheel = e.id;
+    let bgImage = document.querySelector('.carimage')
+    console.log(chosenWheel);
+
+
+    switch(chosenWheel) {
+
+        case "wheel1img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel1 installed.jpg')";
+            break;
+        
+        case "wheel2img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel2 installed.jpg')";
+            break;
+        
+        case "wheel3img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel3 installed.jpg')";
+            break;
+        
+        case "wheel4img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel4 installed.jpg')";
+            break;
+            
+        case "wheel5img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel5 installed.jpg')";
+            break;
+        
+        case "wheel6img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel6 installed.jpg')";
+            break;
+            
+        case "wheel7img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel7 installed.jpg')";
+            break;
+        
+        case "wheel8img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel8 installed.jpg')";
+            break;
+            
+        case "wheel9img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel9 installed.jpg')";
+            break;
+        
+        case "wheel10img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel10 installed.jpg')";
+            break;
+            
+        case "wheel11img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel11 installed.jpg')";
+
+            break;
+        
+        case "wheel12img":
+            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel12 installed.jpg')";
+            break;
+    }
+}
 
 
 
