@@ -212,6 +212,7 @@ body{
 .carimage{
     grid-area:carimage;
     background-image: url("img/MySubaru.jpg");
+    transition: ease-in;
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
