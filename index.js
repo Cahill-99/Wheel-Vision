@@ -98,74 +98,88 @@ function mouseDown(e) {
 }
 */
 
-let wheelsObject = {
+let wheelsArray = [
         
-        wheel1: {
+        {
+            name: "wheel1",
             colour: "silver",
             spokes: 6,
             brand: "enkei"
         },
-        wheel2: {
+        {
+            name: "wheel2",
             colour: "grey",
             spokes: 6,
             brand: "work"
         },
-        wheel3: {
+        {
+            name: "wheel3",
             colour: "silver",
             spokes: 5,
             brand: "3SDM"
         },
-        wheel4: {
+        {
+            name: "wheel4",
             colour: "silver",
             spokes: "6+",
             brand: "enkei"
         },
-        wheel5: {
+        {
+            name: "wheel5",
             colour: "black",
             spokes: "6+",
             brand: "enkei"
         },
-        wheel6: {
+        {
+            name: "wheel6",
             colour: "grey",
             spokes: 6,
             brand: "enkei"
         },
-        wheel7: {
+        {
+            name: "wheel7",
             colour: "gold",
             spokes: 6,
             brand: "enkei"
         },
-        wheel8: {
+        {
+            name: "wheel8",
             colour:"white",
             spokes: 6,
             brand: "enkei"
         },
-        wheel9: {
+        {
+            name: "wheel9",
             colour: "white",
             spokes: 6,
             brand: "rays"
         },
-        wheel10: {
+        {
+            name: "wheel10",
             colour: "grey",
             spokes: "6+",
             brand: "rays"
         },
-        wheel11: {
+        {
+            name: "wheel11",
             colour: "black",
             spokes: 5,
             brand: "work"
         },
-        wheel12: {
+        {
+            name: "wheel12",
             colour: "silver",
             spokes: 5,
             brand:"work"
         }
-}
+    ]
 
 
 function printID(e) {
     e = e || window.event;
     e = e.target;
+
+
 
     let chosenWheel = e.id;
     let bgImage = document.querySelector('.carimage')
@@ -226,5 +240,13 @@ function printID(e) {
     }
 }
 
+let loader = document.querySelector('.loading')
+let bgBox = document.querySelector('.carimage')
 
+const loadRemove = () => {
+    console.log("loaded");
+    loader.remove();
+}
 
+let sideWheels = document.querySelector('.wheelstandard');
+wheels

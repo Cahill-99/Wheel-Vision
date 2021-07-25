@@ -6,7 +6,7 @@
     </head>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <body onclick="printID(this.id);">
+    <body onclick="printID(this.id);"  onload = "loadRemove()">
 
         <section class="grid">
             
@@ -91,7 +91,10 @@
                     
 
                     
-                    <div class="carimage w3-animate-opacity">
+                    <div class="carimage">
+                        <div class="loading">
+
+                        </div>
                         <div class="displayed-wheels">
                             <img class="front-wheel" src="img/WorkMeisterL1GunmetalGC.png">
                             <img class="rear-wheel" src="img/WorkMeisterL1GunmetalGC.png">
