@@ -4,17 +4,81 @@
 const uparrow = document.querySelector(".uparrowimg");
 const downarrow = document.querySelector(".downarrowimg");
 
-const track = document.querySelector(".track");
-const trackHeight = document.querySelector(".track").offsetHeight;
-
+const track = document.getElementById("track");
+const trackHeight = document.getElementById("track").offsetHeight;
+console.log(trackHeight);
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 
 
 let index = 0;
 
 //TEST ZONE
-console.log(carouselHeight);
 
+
+//*** SIDEBAR WHEELS ***
+
+//This has messed up the "trackHeight" measurement for some reason
+
+
+    const wheel1 = document.createElement("IMG");
+    wheel1.src = "img/EnkeiGTC02SilverGC.png";
+    wheel1.classList.add("wheelstandard");
+    track.appendChild(wheel1);
+
+    const wheel2 = document.createElement("IMG");
+    wheel2.src = "img/WorkMeisterL1GunmetalGC.png";
+    wheel2.classList.add("wheelstandard");
+    track.appendChild(wheel2);
+
+    const wheel3 = document.createElement("IMG");
+    wheel3.src = "img/3SDM005MachinedGC.png";
+    wheel3.classList.add("wheelstandard");
+    track.appendChild(wheel3);
+
+    const wheel4 = document.createElement("IMG");
+    wheel4.src = "img/EnkeiTM7GreyGC.png";
+    wheel4.classList.add("wheelstandard");
+    track.appendChild(wheel4);
+
+    const wheel5 = document.createElement("IMG");
+    wheel5.src = "img/EnkeiTM7BlackGC.png";
+    wheel5.classList.add("wheelstandard");
+    track.appendChild(wheel5);
+
+    const wheel6 = document.createElement("IMG");
+    wheel6.src = "img/EnkeiRPF1BlackChromeGC.png";
+    wheel6.classList.add("wheelstandard");
+    track.appendChild(wheel6);
+
+    const wheel7 = document.createElement("IMG");
+    wheel7.src = "img/EnkeiRPF1GoldGC.png";
+    wheel7.classList.add("wheelstandard");
+    track.appendChild(wheel7);
+
+    const wheel8 = document.createElement("IMG");
+    wheel8.src = "img/EnkeiRPF1SilverGC.png";
+    wheel8.classList.add("wheelstandard");
+    track.appendChild(wheel8);
+
+    const wheel9 = document.createElement("IMG");
+    wheel9.src = "img/RaysTE37Gravel2GC.png";
+    wheel9.classList.add("wheelstandard");
+    track.appendChild(wheel9);
+
+    const wheel10 = document.createElement("IMG");
+    wheel10.src = "img/VolkG16GC.png";
+    wheel10.classList.add("wheelstandard");
+    track.appendChild(wheel10);
+
+    const wheel11 = document.createElement("IMG");
+    wheel11.src = "img/WorkCRKiwamiBlack.png";
+    wheel11.classList.add("wheelstandard");
+    track.appendChild(wheel11);
+
+    const wheel12 = document.createElement("IMG");
+    wheel12.src = "img/WorkCRKiwamiSilverGC.png";
+    wheel12.classList.add("wheelstandard");
+    track.appendChild(wheel12);
 
 
 
@@ -38,10 +102,9 @@ uparrow.addEventListener("click", () => {
 downarrow.addEventListener("click", () => {
     index++;
     uparrow.classList.add("show");
-    track.style.transform = `translateY(-${index * carouselHeight}px)`
-    uparrow.classList.add("show");
+    track.style.transform = `translateY(-${index * carouselHeight}px)`;
     console.log(trackHeight - (index * carouselHeight))
-
+    console.log("carouselHieght" + carouselHeight);
     if (trackHeight - (index * carouselHeight) <= carouselHeight + 10) {
        downarrow.classList.add("hide");
 
@@ -175,6 +238,18 @@ let wheelsArray = [
     ]
 
 
+
+// *** CHANGE BACKGROUND IMAGE ON CLICK ***
+
+const wheelImageArray = ["img/EnkeiGTC02SilverGC.png","img/WorkMeisterL1GunmetalGC.png","img/3SDM005MachinedGC.png",
+                        "img/EnkeiTM7GreyGC.png","img/EnkeiTM7BlackGC.png","img/EnkeiRPF1BlackChromeGC.png","img/EnkeiRPF1GoldGC.png",
+                        "img/EnkeiRPF1SilverGC.png","img/RaysTE37Gravel2GC.png","img/VolkG16GC.png","img/WorkCRKiwamiBlack.png",
+                        "img/WorkCRKiwamiSilverGC.png"]
+
+
+
+
+
 function printID(e) {
     e = e || window.event;
     e = e.target;
@@ -182,6 +257,9 @@ function printID(e) {
 
 
     let chosenWheel = e.id;
+
+
+
     let bgImage = document.querySelector('.carimage')
     console.log(chosenWheel);
     
@@ -248,5 +326,4 @@ const loadRemove = () => {
     loader.remove();
 }
 
-let sideWheels = document.querySelector('.wheelstandard');
-wheels
+

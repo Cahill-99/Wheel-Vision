@@ -48,7 +48,7 @@ body{
 /*Standard Settings*/
 
 .wheelstandard{
-    height:16.6vh;
+    height:16.5vh;
     cursor:pointer;
 }
 
@@ -164,17 +164,18 @@ body{
     overflow:hidden;
 }
 
-.track{
+#track{
     transition: transform 0.3s;
     margin:auto;
     display:flex;
     flex-direction:column;
 }
+
 .wheelscroll{
-    height: 66vh;
+   /* height: 66vh;
     display:flex;
     flex-direction:column;
-    justify-content:space-evenly;
+    justify-content:space-evenly; */
 }
 
 
