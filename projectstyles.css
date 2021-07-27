@@ -241,6 +241,10 @@ body{
         100% { transform: rotate(360deg); }
       }
 
+.loading.hide{
+    display:none;
+}
+
 .subarupic{
     height: 100%;
 }

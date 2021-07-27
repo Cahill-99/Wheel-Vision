@@ -17,72 +17,119 @@ let index = 0;
 
 //*** SIDEBAR WHEELS ***
 
-//This has messed up the "trackHeight" measurement for some reason
+let wheelsArray = [
+        
+    {
+        idName: "wheel1img",
+        imgSource:"img/EnkeiGTC02SilverGC.png",
+        colour: "silver",
+        spokes: 6,
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel1 installed.jpg')"
+    },
+    {
+        idName: "wheel2img",
+        imgSource:"img/WorkMeisterL1GunmetalGC.png",
+        colour: "grey",
+        spokes: 6,
+        brand: "work",
+        backImage: "url('img/Chosen Wheels/Wheel2 installed.jpg')"
+    },
+    {
+        idName: "wheel3img",
+        imgSource:"img/3SDM005MachinedGC.png",
+        colour: "silver",
+        spokes: 5,
+        brand: "3SDM",
+        backImage: "url('img/Chosen Wheels/Wheel3 installed.jpg')"
+    },
+    {
+        idName: "wheel4img",
+        imgSource:"img/EnkeiTM7GreyGC.png",
+        colour: "silver",
+        spokes: "6+",
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel4 installed.jpg')"
+    },
+    {
+        idName: "wheel5img",
+        imgSource:"img/EnkeiTM7BlackGC.png",
+        colour: "black",
+        spokes: "6+",
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel5 installed.jpg')"
+    },
+    {
+        idName: "wheel6img",
+        imgSource:"img/EnkeiRPF1BlackChromeGC.png",
+        colour: "grey",
+        spokes: 6,
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel6 installed.jpg')"
+    },
+    {
+        idName: "wheel7img",
+        imgSource:"img/EnkeiRPF1GoldGC.png",
+        colour: "gold",
+        spokes: 6,
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel7 installed.jpg')"
+    },
+    {
+        idName: "wheel8img",
+        imgSource:"img/EnkeiRPF1SilverGC.png",
+        colour:"white",
+        spokes: 6,
+        brand: "enkei",
+        backImage: "url('img/Chosen Wheels/Wheel8 installed.jpg')"
+    },
+    {
+        idName: "wheel9img",
+        imgSource:"img/RaysTE37Gravel2GC.png",
+        colour: "white",
+        spokes: 6,
+        brand: "rays",
+        backImage: "url('img/Chosen Wheels/Wheel9 installed.jpg')"
+    },
+    {
+        idName: "wheel10img",
+        imgSource:"img/VolkG16GC.png",
+        colour: "grey",
+        spokes: "6+",
+        brand: "rays",
+        backImage: "url('img/Chosen Wheels/Wheel10 installed.jpg')"
+    },
+    {
+        idName: "wheel11img",
+        imgSource:"img/WorkCRKiwamiBlack.png",
+        colour: "black",
+        spokes: 5,
+        brand: "work",
+        backImage: "url('img/Chosen Wheels/Wheel11 installed.jpg')"
+    },
+    {
+        idName: "wheel12img",
+        imgSource:"img/WorkCRKiwamiSilverGC.png",
+        colour: "silver",
+        spokes: 5,
+        brand:"work",
+        backImage: "url('img/Chosen Wheels/Wheel12 installed.jpg')"
+    }
+]
 
 
-    const wheel1 = document.createElement("IMG");
-    wheel1.src = "img/EnkeiGTC02SilverGC.png";
-    wheel1.classList.add("wheelstandard");
-    track.appendChild(wheel1);
 
-    const wheel2 = document.createElement("IMG");
-    wheel2.src = "img/WorkMeisterL1GunmetalGC.png";
-    wheel2.classList.add("wheelstandard");
-    track.appendChild(wheel2);
-
-    const wheel3 = document.createElement("IMG");
-    wheel3.src = "img/3SDM005MachinedGC.png";
-    wheel3.classList.add("wheelstandard");
-    track.appendChild(wheel3);
-
-    const wheel4 = document.createElement("IMG");
-    wheel4.src = "img/EnkeiTM7GreyGC.png";
-    wheel4.classList.add("wheelstandard");
-    track.appendChild(wheel4);
-
-    const wheel5 = document.createElement("IMG");
-    wheel5.src = "img/EnkeiTM7BlackGC.png";
-    wheel5.classList.add("wheelstandard");
-    track.appendChild(wheel5);
-
-    const wheel6 = document.createElement("IMG");
-    wheel6.src = "img/EnkeiRPF1BlackChromeGC.png";
-    wheel6.classList.add("wheelstandard");
-    track.appendChild(wheel6);
-
-    const wheel7 = document.createElement("IMG");
-    wheel7.src = "img/EnkeiRPF1GoldGC.png";
-    wheel7.classList.add("wheelstandard");
-    track.appendChild(wheel7);
-
-    const wheel8 = document.createElement("IMG");
-    wheel8.src = "img/EnkeiRPF1SilverGC.png";
-    wheel8.classList.add("wheelstandard");
-    track.appendChild(wheel8);
-
-    const wheel9 = document.createElement("IMG");
-    wheel9.src = "img/RaysTE37Gravel2GC.png";
-    wheel9.classList.add("wheelstandard");
-    track.appendChild(wheel9);
-
-    const wheel10 = document.createElement("IMG");
-    wheel10.src = "img/VolkG16GC.png";
-    wheel10.classList.add("wheelstandard");
-    track.appendChild(wheel10);
-
-    const wheel11 = document.createElement("IMG");
-    wheel11.src = "img/WorkCRKiwamiBlack.png";
-    wheel11.classList.add("wheelstandard");
-    track.appendChild(wheel11);
-
-    const wheel12 = document.createElement("IMG");
-    wheel12.src = "img/WorkCRKiwamiSilverGC.png";
-    wheel12.classList.add("wheelstandard");
-    track.appendChild(wheel12);
+    for(let i =0 ; i < wheelsArray.length; i++) {
+        console.log("yo dude");
+        let newWheel = document.createElement("IMG");
+        newWheel.src = wheelsArray[i].imgSource;
+        newWheel.classList.add("wheelstandard");
+        newWheel.setAttribute("id", wheelsArray.idName);
+        track.appendChild(newWheel);
 
 
-
-
+    }
+    //This has messed up the "trackHeight" measurement for some reason
 
 
 
@@ -161,81 +208,7 @@ function mouseDown(e) {
 }
 */
 
-let wheelsArray = [
-        
-        {
-            name: "wheel1",
-            colour: "silver",
-            spokes: 6,
-            brand: "enkei"
-        },
-        {
-            name: "wheel2",
-            colour: "grey",
-            spokes: 6,
-            brand: "work"
-        },
-        {
-            name: "wheel3",
-            colour: "silver",
-            spokes: 5,
-            brand: "3SDM"
-        },
-        {
-            name: "wheel4",
-            colour: "silver",
-            spokes: "6+",
-            brand: "enkei"
-        },
-        {
-            name: "wheel5",
-            colour: "black",
-            spokes: "6+",
-            brand: "enkei"
-        },
-        {
-            name: "wheel6",
-            colour: "grey",
-            spokes: 6,
-            brand: "enkei"
-        },
-        {
-            name: "wheel7",
-            colour: "gold",
-            spokes: 6,
-            brand: "enkei"
-        },
-        {
-            name: "wheel8",
-            colour:"white",
-            spokes: 6,
-            brand: "enkei"
-        },
-        {
-            name: "wheel9",
-            colour: "white",
-            spokes: 6,
-            brand: "rays"
-        },
-        {
-            name: "wheel10",
-            colour: "grey",
-            spokes: "6+",
-            brand: "rays"
-        },
-        {
-            name: "wheel11",
-            colour: "black",
-            spokes: 5,
-            brand: "work"
-        },
-        {
-            name: "wheel12",
-            colour: "silver",
-            spokes: 5,
-            brand:"work"
-        }
-    ]
+
 
 
 
@@ -262,58 +235,118 @@ function printID(e) {
 
     let bgImage = document.querySelector('.carimage')
     console.log(chosenWheel);
-    
+    let tempImage;
  
 
     switch(chosenWheel) {
 
         case "wheel1img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel1 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel1 installed.jpg')"
+                tempImage.remove();   
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel1 installed.jpg';
             break;
         
         case "wheel2img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel2 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel2 installed.jpg')"  
+                tempImage.remove(); 
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel2 installed.jpg';
             break;
         
         case "wheel3img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel3 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel3 installed.jpg')"  
+                tempImage.remove(); 
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel3 installed.jpg';
             break;
         
         case "wheel4img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel4 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel4 installed.jpg')" 
+                tempImage.remove();  
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel4 installed.jpg';
             break;
             
         case "wheel5img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel5 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel5 installed.jpg')"  
+                tempImage.remove(); 
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel5 installed.jpg';
             break;
         
         case "wheel6img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel6 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel6 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel6 installed.jpg';
             break;
             
         case "wheel7img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel7 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel7 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel7 installed.jpg';
             break;
         
         case "wheel8img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel8 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel8 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel8 installed.jpg';
             break;
             
         case "wheel9img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel9 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel9 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel9 installed.jpg';
             break;
         
         case "wheel10img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel10 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel10 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel10 installed.jpg';
             break;
             
         case "wheel11img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel11 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel11 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel11 installed.jpg';
 
             break;
         
         case "wheel12img":
-            bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel12 installed.jpg')";
+            tempImage = new Image(100,200);
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = "url('img/Chosen Wheels/Wheel12 installed.jpg')"   
+                tempImage.remove();
+            }
+            tempImage.src = 'img/Chosen Wheels/Wheel12 installed.jpg';
             break;
     }
 }
@@ -323,7 +356,7 @@ let bgBox = document.querySelector('.carimage')
 
 const loadRemove = () => {
     console.log("loaded");
-    loader.remove();
+    loader.classList.add("hide");
 }
 
 
