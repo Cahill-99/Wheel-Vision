@@ -6,7 +6,6 @@ const downarrow = document.querySelector(".downarrowimg");
 
 const track = document.getElementById("track");
 const trackHeight = document.getElementById("track").offsetHeight;
-console.log(trackHeight);
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 
 
@@ -118,17 +117,21 @@ let wheelsArray = [
 ]
 
 
+let chosenWheel;
 
-    for(let i =0 ; i < wheelsArray.length; i++) {
-        console.log("yo dude");
+
+    for(let i = 0 ; i < wheelsArray.length; i++) {
         let newWheel = document.createElement("IMG");
+        
         newWheel.src = wheelsArray[i].imgSource;
         newWheel.classList.add("wheelstandard");
-        newWheel.setAttribute("id", wheelsArray.idName);
+        newWheel.id = wheelsArray[i].idName;
         track.appendChild(newWheel);
+        console.log(newWheel.id);
 
-
+        
     }
+        
     //This has messed up the "trackHeight" measurement for some reason
 
 
@@ -222,7 +225,7 @@ const wheelImageArray = ["img/EnkeiGTC02SilverGC.png","img/WorkMeisterL1Gunmetal
 
 
 
-
+/*
 function printID(e) {
     e = e || window.event;
     e = e.target;
@@ -231,7 +234,7 @@ function printID(e) {
 
     let chosenWheel = e.id;
 
-
+*/
 
     let bgImage = document.querySelector('.carimage')
     console.log(chosenWheel);
@@ -349,7 +352,7 @@ function printID(e) {
             tempImage.src = 'img/Chosen Wheels/Wheel12 installed.jpg';
             break;
     }
-}
+//}
 
 let loader = document.querySelector('.loading')
 let bgBox = document.querySelector('.carimage')
