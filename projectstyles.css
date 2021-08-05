@@ -172,6 +172,10 @@ body{
     cursor: pointer;
 }
 
+.filteroptions{
+    display:flex;
+    flex-direction:column;
+}
 
 
 

@@ -58,10 +58,7 @@ import { wheelsArray } from "./wheels.js"
                 loader.classList.add("hide");
                 tempImage.remove();
             }
-
         }
-        
-
     });
 
 
@@ -84,6 +81,7 @@ import { filterArray } from "./wheels.js";
     let filterContainer = document.createElement("DIV");
     filterContainer.classList.add("filtercontainer");
     carousel.appendChild(filterContainer);
+    let filterOptions;
 
     filterArray.forEach(filter => {
         let newFilter = document.createElement("button");
@@ -94,14 +92,77 @@ import { filterArray } from "./wheels.js";
         filterContainer.appendChild(newFilter);
 
         newFilter.onclick = function showOptions() {
+
             filterContainer.style.display = filter.hide;
+            let selectedFilter = filter.id;
+            filterOptions = document.createElement("DIV");
+            filterOptions.classList.add("filteroptions");
+            carousel.appendChild(filterOptions);
+
+            switch (selectedFilter) {
+                case "brand":
+                    let brand1 = document.createElement("button");
+                    filterOptions.appendChild(brand1);
+                    brand1.innerHTML = "3SDM"
+
+                    let brand2 = document.createElement("button");
+                    filterOptions.appendChild(brand2);
+                    brand2.innerHTML = "ENKEI"
+
+                    let brand3 = document.createElement("button");
+                    filterOptions.appendChild(brand3);
+                    brand3.innerHTML = "RAYS"
+
+                    let brand4 = document.createElement("button");
+                    filterOptions.appendChild(brand4);
+                    brand4.innerHTML = "WORK"
+                    
+                    break;
+
+                case "colour":
+                    let colour1 = document.createElement("button");
+                    filterOptions.appendChild(colour1);
+                    colour1.innerHTML = "BLACK";
+
+                    let colour2 = document.createElement("button");
+                    filterOptions.appendChild(colour2);
+                    colour2.innerHTML = "GOLD";
+
+                    let colour3 = document.createElement("button");
+                    filterOptions.appendChild(colour3);
+                    colour3.innerHTML = "GREY";
+
+                    let colour4 = document.createElement("button");
+                    filterOptions.appendChild(colour4);
+                    colour4.innerHTML = "SILVER";
+
+                    let colour5 = document.createElement("button");
+                    filterOptions.appendChild(colour5);
+                    colour5.innerHTML = "WHITE";
+
+                    break;
+
+                case "spokes":
+                    let spokes1 = document.createElement("button");
+                    filterOptions.appendChild(spokes1);
+                    spokes1.innerHTML = "5"
+
+                    let spokes2 = document.createElement("button");
+                    filterOptions.appendChild(spokes2);
+                    spokes2.innerHTML = "6"
+
+                    let spokes3 = document.createElement("button");
+                    filterOptions.appendChild(spokes3);
+                    spokes3.innerHTML = "6+"
+
+                    break;
+            }
+            console.log(filterOptions);
+            console.log(selectedFilter);
         }
-            
-            
-        
-        
     })
 
+    
 
 
     let filterButton = document.querySelector(".filtericonimg");
@@ -116,17 +177,17 @@ filterButton.onclick = function toggleFilter() {
         track.style.display = "none";
         filterContainer.style.display = "flex";
         filterButton.src = "Assets/Group 25 Active.png";
-        uparrow.style.display = "none";
-        downarrow.style.display = "none"
-
     } else {
         track.style.display = "flex";
         filterContainer.style.display = "none";
         filterButton.src = "Assets/Group 25.png";
-        uparrow.style.display = "block"
-        downarrow.style.display = "block"
+        filterOptions.remove();
     }
 }
+
+
+
+
 
 //UPARROW
 uparrow.addEventListener("click", () => {
