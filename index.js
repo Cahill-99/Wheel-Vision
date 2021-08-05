@@ -7,6 +7,7 @@ const downarrow = document.querySelector(".downarrowimg");
 const track = document.getElementById("track");
 const trackHeight = document.getElementById("track").offsetHeight;
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
+const carousel =  document.querySelector(".carousel-container");
 
 let loader = document.querySelector('.loading')
 let bgBox = document.querySelector('.carimage')
@@ -45,7 +46,6 @@ import { wheelsArray } from "./wheels.js"
         newWheel.classList.add("wheelstandard");
         newWheel.id = wheel.idName;
         track.appendChild(newWheel);
-        console.log(newWheel.id);
 
         let bgImage = document.querySelector('.carimage')
         newWheel.onclick = function changeWheels() {
@@ -68,7 +68,65 @@ import { wheelsArray } from "./wheels.js"
 let index = 0;
 let wheelDivision = wheelsArray.length/4;
 let roundedDivision = Math.ceil(wheelDivision);
-console.log(roundedDivision);
+
+
+//*** FILTER ***
+
+
+
+
+// FILTER OBJECTS ARRAY 
+
+import { filterArray } from "./wheels.js";
+
+//LOOP THROUGH FILTER ARRAY
+
+    let filterContainer = document.createElement("DIV");
+    filterContainer.classList.add("filtercontainer");
+    carousel.appendChild(filterContainer);
+
+    filterArray.forEach(filter => {
+        let newFilter = document.createElement("button");
+
+        newFilter.innerHTML = filter.btnText;
+        newFilter.classList.add("filterstandard");
+        newFilter.classList.add("filterButton");
+        filterContainer.appendChild(newFilter);
+
+        newFilter.onclick = function showOptions() {
+            filterContainer.style.display = filter.hide;
+        }
+            
+            
+        
+        
+    })
+
+
+
+    let filterButton = document.querySelector(".filtericonimg");
+    let fltrIndex = 1;
+
+filterButton.onclick = function toggleFilter() {
+
+    fltrIndex++
+    console.log(fltrIndex);
+    
+    if (fltrIndex % 2 == 0) {
+        track.style.display = "none";
+        filterContainer.style.display = "flex";
+        filterButton.src = "Assets/Group 25 Active.png";
+        uparrow.style.display = "none";
+        downarrow.style.display = "none"
+
+    } else {
+        track.style.display = "flex";
+        filterContainer.style.display = "none";
+        filterButton.src = "Assets/Group 25.png";
+        uparrow.style.display = "block"
+        downarrow.style.display = "block"
+    }
+}
 
 //UPARROW
 uparrow.addEventListener("click", () => {
@@ -79,6 +137,7 @@ uparrow.addEventListener("click", () => {
     if(index === 0) {
         uparrow.classList.remove("show");
     }
+    
 })
 
 //DOWNARROW
@@ -88,7 +147,7 @@ downarrow.addEventListener("click", () => {
     track.style.transform = `translateY(-${index * carouselHeight}px)`;
     
     if (roundedDivision - 1 === index) {
-        downarrow.classList.add("hide");
+        downarrow.classList.add("hide")
     }
     
 })

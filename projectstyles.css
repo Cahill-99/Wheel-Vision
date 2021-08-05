@@ -47,13 +47,31 @@ body{
 
 /*Standard Settings*/
 
+.menustandard{
+    margin:auto;
+}
+
 .wheelstandard{
     height:16.5vh;
     cursor:pointer;
 }
 
-.menustandard{
-    margin:auto;
+.filterstandard{
+    border: 3px solid #929292;
+    border-radius:20%;
+    background: transparent;
+    color:white;
+    padding-top:8%;
+    padding-bottom:8%;
+}
+
+.filtercontainer{
+    height:44vh;
+    width:15vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+
 }
 
 .col1{
@@ -151,6 +169,7 @@ body{
 .filtericonimg{
     grid-area:filtericon;
     height:60px;
+    cursor: pointer;
 }
 
 
@@ -161,6 +180,7 @@ body{
     height:66vh;
     display:flex;
     flex-direction:column;
+    align-items: center;
     overflow:hidden;
 }
 
