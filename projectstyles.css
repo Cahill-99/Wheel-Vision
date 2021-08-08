@@ -63,6 +63,7 @@ body{
     color:white;
     padding-top:8%;
     padding-bottom:8%;
+    cursor:pointer;
 }
 
 .filtercontainer{
@@ -175,6 +176,8 @@ body{
 .filteroptions{
     display:flex;
     flex-direction:column;
+    height:50%;
+    justify-content:space-evenly;
 }
 
 

@@ -4,7 +4,7 @@
 const uparrow = document.querySelector(".uparrowimg");
 const downarrow = document.querySelector(".downarrowimg");
 
-const track = document.getElementById("track");
+let track = document.getElementById("track");
 const trackHeight = document.getElementById("track").offsetHeight;
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 const carousel =  document.querySelector(".carousel-container");
@@ -38,8 +38,8 @@ import { wheelsArray } from "./wheels.js"
 
 
 //LOOP THROUGH WHEELS ARRAY
-
-    wheelsArray.forEach(wheel => {
+let activeArray = wheelsArray;
+activeArray.forEach(wheel => {
         let newWheel = document.createElement("IMG");
         
         newWheel.src = wheel.imgSource;
@@ -63,127 +63,234 @@ import { wheelsArray } from "./wheels.js"
 
 
 let index = 0;
-let wheelDivision = wheelsArray.length/4;
+let wheelDivision = activeArray.length/4;
 let roundedDivision = Math.ceil(wheelDivision);
 
 
 //*** FILTER ***
 
+let filterButton = document.querySelector(".filtericonimg");
+let fltrIndex = 1;
 
+filterButton.onclick = function toggleFilter() {
 
+fltrIndex++
+console.log(fltrIndex);
+
+if (fltrIndex % 2 == 0) {
+    track.style.display = "none";
+    filterContainer.style.display = "flex";
+    filterButton.src = "Assets/Group 25 Active.png";
+} else {
+    track.style.display = "flex";
+    filterContainer.style.display = "none";
+    filterButton.src = "Assets/Group 25.png";
+    if (filterOptions !== undefined){
+        filterOptions.remove();
+    }
+}
+}
 
 // FILTER OBJECTS ARRAY 
 
 import { filterArray } from "./wheels.js";
+import { brandOptionsArray } from "./wheels.js";
+import { colourOptionsArray } from "./wheels.js";
+import { spokesOptionsArray } from "./wheels.js";
 
 //LOOP THROUGH FILTER ARRAY
 
-    let filterContainer = document.createElement("DIV");
-    filterContainer.classList.add("filtercontainer");
-    carousel.appendChild(filterContainer);
-    let filterOptions;
 
-    filterArray.forEach(filter => {
-        let newFilter = document.createElement("button");
+let filterContainer = document.createElement("DIV");
+filterContainer.classList.add("filtercontainer");
+carousel.appendChild(filterContainer);
+let filterOptions;
 
-        newFilter.innerHTML = filter.btnText;
-        newFilter.classList.add("filterstandard");
-        newFilter.classList.add("filterButton");
-        filterContainer.appendChild(newFilter);
+filterArray.forEach(filter => {
+    let newFilter = document.createElement("button");
 
-        newFilter.onclick = function showOptions() {
+    newFilter.innerHTML = filter.btnText;
+    newFilter.classList.add("filterstandard");
+    newFilter.style.cursor = "pointer";
+    filterContainer.appendChild(newFilter);
 
-            filterContainer.style.display = filter.hide;
-            let selectedFilter = filter.id;
-            filterOptions = document.createElement("DIV");
-            filterOptions.classList.add("filteroptions");
-            carousel.appendChild(filterOptions);
+    newFilter.onclick = function showOptions() {
 
-            switch (selectedFilter) {
-                case "brand":
-                    let brand1 = document.createElement("button");
-                    filterOptions.appendChild(brand1);
-                    brand1.innerHTML = "3SDM"
+        filterContainer.style.display = filter.hide;
+        let selectedFilter = filter.id;
+        filterOptions = document.createElement("DIV");
+        filterOptions.classList.add("filteroptions");
+        carousel.appendChild(filterOptions);
 
-                    let brand2 = document.createElement("button");
-                    filterOptions.appendChild(brand2);
-                    brand2.innerHTML = "ENKEI"
+        switch (selectedFilter) {
+            case "brand":
+                brandOptionsArray.forEach(option => {
+                    let brandOption = document.createElement("button");
+                    filterOptions.appendChild(brandOption);
+                    brandOption.innerHTML = option;
+                    brandOption.classList.add("filterstandard");
 
-                    let brand3 = document.createElement("button");
-                    filterOptions.appendChild(brand3);
-                    brand3.innerHTML = "RAYS"
+                    brandOption.onclick = function filterArray() {
+                        let selectedOption = option;
+                        console.log(selectedOption);
+                        filterOptions.style.display ="none";
+                        fltrIndex++;
+                        filterButton.src = "Assets/Group 25.png";
+                        console.log(fltrIndex);
 
-                    let brand4 = document.createElement("button");
-                    filterOptions.appendChild(brand4);
-                    brand4.innerHTML = "WORK"
-                    
-                    break;
+                        activeArray = wheelsArray.filter(wheel => {
+                            return wheel.brand === selectedOption;
+                        });
 
-                case "colour":
-                    let colour1 = document.createElement("button");
-                    filterOptions.appendChild(colour1);
-                    colour1.innerHTML = "BLACK";
 
-                    let colour2 = document.createElement("button");
-                    filterOptions.appendChild(colour2);
-                    colour2.innerHTML = "GOLD";
+                        track.remove();
+                        track = document.createElement("div");
+                        carousel.appendChild(track);
+                        track.id = "track";
 
-                    let colour3 = document.createElement("button");
-                    filterOptions.appendChild(colour3);
-                    colour3.innerHTML = "GREY";
+                        activeArray.forEach(wheel => {
+                            const newWheel = document.createElement("IMG");
+                            newWheel.src = wheel.imgSource;
+                            newWheel.classList.add("wheelstandard");
+                            newWheel.id = wheel.idName;
+                            track.appendChild(newWheel);
 
-                    let colour4 = document.createElement("button");
-                    filterOptions.appendChild(colour4);
-                    colour4.innerHTML = "SILVER";
+                            newWheel.onclick = function changeWheels() {
+                                let bgImage = document.querySelector('.carimage')
+                                loader.classList.remove("hide");
+                                let tempImage = new Image(200,100);
+                                tempImage.src = wheel.temp;
+                                tempImage.onload = () => {
+                                    bgImage.style.backgroundImage = wheel.backImage;
+                                    loader.classList.add("hide");
+                                    tempImage.remove();
+                                }
+                            }
+                            
+                        })
+                        
+                        
+                        console.log(activeArray);
 
-                    let colour5 = document.createElement("button");
-                    filterOptions.appendChild(colour5);
-                    colour5.innerHTML = "WHITE";
+                    }
+                })
+                
+                break;
 
-                    break;
+            case "colour":
+                colourOptionsArray.forEach(option => {
+                    let colourOption = document.createElement("button");
+                    filterOptions.appendChild(colourOption);
+                    colourOption.innerHTML = option;
+                    colourOption.classList.add("filterstandard");
 
-                case "spokes":
-                    let spokes1 = document.createElement("button");
-                    filterOptions.appendChild(spokes1);
-                    spokes1.innerHTML = "5"
+                    colourOption.onclick = function filterArray() {
+                        let selectedOption = option;
+                        console.log(selectedOption);
+                        filterOptions.style.display ="none";
+                        fltrIndex++;
+                        filterButton.src = "Assets/Group 25.png";
 
-                    let spokes2 = document.createElement("button");
-                    filterOptions.appendChild(spokes2);
-                    spokes2.innerHTML = "6"
+                        let activeArray = wheelsArray.filter(wheel => {
+                            return wheel.colour === selectedOption;
+                        });
 
-                    let spokes3 = document.createElement("button");
-                    filterOptions.appendChild(spokes3);
-                    spokes3.innerHTML = "6+"
 
-                    break;
-            }
-            console.log(filterOptions);
-            console.log(selectedFilter);
+                        track.remove();
+                        track = document.createElement("div");
+                        carousel.appendChild(track);
+                        track.id = "track";
+
+                        activeArray.forEach(wheel => {
+                            const newWheel = document.createElement("IMG");
+                            newWheel.src = wheel.imgSource;
+                            newWheel.classList.add("wheelstandard");
+                            newWheel.id = wheel.idName;
+                            track.appendChild(newWheel);
+
+                            newWheel.onclick = function changeWheels() {
+                                let bgImage = document.querySelector('.carimage')
+                                loader.classList.remove("hide");
+                                let tempImage = new Image(200,100);
+                                tempImage.src = wheel.temp;
+                                tempImage.onload = () => {
+                                    bgImage.style.backgroundImage = wheel.backImage;
+                                    loader.classList.add("hide");
+                                    tempImage.remove();
+                                }
+                            }
+                            
+                        })
+
+                    }
+                })
+
+                break;
+
+            case "spokes":
+                spokesOptionsArray.forEach(option => {
+                    let spokesOption = document.createElement("button");
+                    filterOptions.appendChild(spokesOption);
+                    spokesOption.innerHTML = option;
+                    spokesOption.classList.add("filterstandard");
+
+                    spokesOption.onclick = function filterArray() {
+                        let selectedOption = option;
+                        console.log(selectedOption);
+                        filterOptions.style.display ="none";
+                        fltrIndex++;
+                        filterButton.src = "Assets/Group 25.png";
+
+                        let activeArray = wheelsArray.filter(wheel => {
+                            return wheel.spokes === selectedOption;
+                        });
+
+
+                        track.remove();
+                        track = document.createElement("div");
+                        carousel.appendChild(track);
+                        track.id = "track";
+
+                        activeArray.forEach(wheel => {
+                            const newWheel = document.createElement("IMG");
+                            newWheel.src = wheel.imgSource;
+                            newWheel.classList.add("wheelstandard");
+                            newWheel.id = wheel.idName;
+                            track.appendChild(newWheel);
+
+                            newWheel.onclick = function changeWheels() {
+                                let bgImage = document.querySelector('.carimage')
+                                loader.classList.remove("hide");
+                                let tempImage = new Image(200,100);
+                                tempImage.src = wheel.temp;
+                                tempImage.onload = () => {
+                                    bgImage.style.backgroundImage = wheel.backImage;
+                                    loader.classList.add("hide");
+                                    tempImage.remove();
+                                }
+                            }
+                            
+                        })
+                        console.log(filteredArray);
+
+                    }
+                })
+
+                break;
         }
-    })
-
-    
-
-
-    let filterButton = document.querySelector(".filtericonimg");
-    let fltrIndex = 1;
-
-filterButton.onclick = function toggleFilter() {
-
-    fltrIndex++
-    console.log(fltrIndex);
-    
-    if (fltrIndex % 2 == 0) {
-        track.style.display = "none";
-        filterContainer.style.display = "flex";
-        filterButton.src = "Assets/Group 25 Active.png";
-    } else {
-        track.style.display = "flex";
-        filterContainer.style.display = "none";
-        filterButton.src = "Assets/Group 25.png";
-        filterOptions.remove();
+        console.log(filterOptions);
+        console.log(selectedFilter);
     }
-}
+})
+
+
+
+
+
+
+
+
+//***ARRAY.FILTER***/
 
 
 
