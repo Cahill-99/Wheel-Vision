@@ -27,8 +27,11 @@ loadRemove()
 
 
 
-
 //*** SIDEBAR WHEELS ***
+
+
+
+
 
 
 
@@ -62,9 +65,15 @@ activeArray.forEach(wheel => {
     });
 
 
-let index = 0;
-let wheelDivision = activeArray.length/4;
-let roundedDivision = Math.ceil(wheelDivision);
+
+
+    let index = 0;
+    let wheelDivision = activeArray.length/4;
+    let roundedDivision = Math.ceil(wheelDivision);
+    
+
+
+
 
 
 //*** FILTER ***
@@ -75,7 +84,7 @@ let fltrIndex = 1;
 filterButton.onclick = function toggleFilter() {
 
 fltrIndex++
-console.log(fltrIndex);
+
 
 if (fltrIndex % 2 == 0) {
     track.style.display = "none";
@@ -99,6 +108,62 @@ import { colourOptionsArray } from "./wheels.js";
 import { spokesOptionsArray } from "./wheels.js";
 
 //LOOP THROUGH FILTER ARRAY
+function filterOperation(option) {
+    let newOption = document.createElement("button");
+        filterOptions.appendChild(newOption);
+        newOption.innerHTML = option;
+        newOption.classList.add("filterstandard");
+    
+    newOption.onclick = function filterArray() {
+        let selectedOption = option;
+        console.log(selectedOption);
+        filterOptions.style.display ="none";
+        fltrIndex++;
+        filterButton.src = "Assets/Group 25.png";
+    
+                     
+    
+        activeArray = wheelsArray.filter(wheel => {
+            
+            return wheel.brand === selectedOption;
+            
+        });
+    
+    
+        track.remove();
+        track = document.createElement("div");
+        carousel.appendChild(track);
+        track.id = "track";
+    
+        activeArray.forEach(wheel => {
+            const newWheel = document.createElement("IMG");
+            newWheel.src = wheel.imgSource;
+            newWheel.classList.add("wheelstandard");
+            newWheel.id = wheel.idName;
+            track.appendChild(newWheel);
+            console.log(roundedDivision);
+    
+            newWheel.onclick = function changeWheels() {
+                let bgImage = document.querySelector('.carimage')
+                loader.classList.remove("hide");
+                let tempImage = new Image(200,100);
+                tempImage.src = wheel.temp;
+                tempImage.onload = () => {
+                    bgImage.style.backgroundImage = wheel.backImage;
+                    loader.classList.add("hide");
+                    tempImage.remove();
+                }
+            }
+                                
+        })
+                            
+                            
+        console.log(activeArray);
+    
+        }
+    }
+
+
 
 
 let filterContainer = document.createElement("DIV");
@@ -125,155 +190,21 @@ filterArray.forEach(filter => {
         switch (selectedFilter) {
             case "brand":
                 brandOptionsArray.forEach(option => {
-                    let brandOption = document.createElement("button");
-                    filterOptions.appendChild(brandOption);
-                    brandOption.innerHTML = option;
-                    brandOption.classList.add("filterstandard");
-
-                    brandOption.onclick = function filterArray() {
-                        let selectedOption = option;
-                        console.log(selectedOption);
-                        filterOptions.style.display ="none";
-                        fltrIndex++;
-                        filterButton.src = "Assets/Group 25.png";
-                        console.log(fltrIndex);
-
-                        activeArray = wheelsArray.filter(wheel => {
-                            return wheel.brand === selectedOption;
-                        });
-
-
-                        track.remove();
-                        track = document.createElement("div");
-                        carousel.appendChild(track);
-                        track.id = "track";
-
-                        activeArray.forEach(wheel => {
-                            const newWheel = document.createElement("IMG");
-                            newWheel.src = wheel.imgSource;
-                            newWheel.classList.add("wheelstandard");
-                            newWheel.id = wheel.idName;
-                            track.appendChild(newWheel);
-
-                            newWheel.onclick = function changeWheels() {
-                                let bgImage = document.querySelector('.carimage')
-                                loader.classList.remove("hide");
-                                let tempImage = new Image(200,100);
-                                tempImage.src = wheel.temp;
-                                tempImage.onload = () => {
-                                    bgImage.style.backgroundImage = wheel.backImage;
-                                    loader.classList.add("hide");
-                                    tempImage.remove();
-                                }
-                            }
-                            
-                        })
-                        
-                        
-                        console.log(activeArray);
-
-                    }
+                    filterOperation(option);
                 })
                 
                 break;
 
             case "colour":
                 colourOptionsArray.forEach(option => {
-                    let colourOption = document.createElement("button");
-                    filterOptions.appendChild(colourOption);
-                    colourOption.innerHTML = option;
-                    colourOption.classList.add("filterstandard");
-
-                    colourOption.onclick = function filterArray() {
-                        let selectedOption = option;
-                        console.log(selectedOption);
-                        filterOptions.style.display ="none";
-                        fltrIndex++;
-                        filterButton.src = "Assets/Group 25.png";
-
-                        let activeArray = wheelsArray.filter(wheel => {
-                            return wheel.colour === selectedOption;
-                        });
-
-
-                        track.remove();
-                        track = document.createElement("div");
-                        carousel.appendChild(track);
-                        track.id = "track";
-
-                        activeArray.forEach(wheel => {
-                            const newWheel = document.createElement("IMG");
-                            newWheel.src = wheel.imgSource;
-                            newWheel.classList.add("wheelstandard");
-                            newWheel.id = wheel.idName;
-                            track.appendChild(newWheel);
-
-                            newWheel.onclick = function changeWheels() {
-                                let bgImage = document.querySelector('.carimage')
-                                loader.classList.remove("hide");
-                                let tempImage = new Image(200,100);
-                                tempImage.src = wheel.temp;
-                                tempImage.onload = () => {
-                                    bgImage.style.backgroundImage = wheel.backImage;
-                                    loader.classList.add("hide");
-                                    tempImage.remove();
-                                }
-                            }
-                            
-                        })
-
-                    }
+                   filterOperation(option);
                 })
 
                 break;
 
             case "spokes":
                 spokesOptionsArray.forEach(option => {
-                    let spokesOption = document.createElement("button");
-                    filterOptions.appendChild(spokesOption);
-                    spokesOption.innerHTML = option;
-                    spokesOption.classList.add("filterstandard");
-
-                    spokesOption.onclick = function filterArray() {
-                        let selectedOption = option;
-                        console.log(selectedOption);
-                        filterOptions.style.display ="none";
-                        fltrIndex++;
-                        filterButton.src = "Assets/Group 25.png";
-
-                        let activeArray = wheelsArray.filter(wheel => {
-                            return wheel.spokes === selectedOption;
-                        });
-
-
-                        track.remove();
-                        track = document.createElement("div");
-                        carousel.appendChild(track);
-                        track.id = "track";
-
-                        activeArray.forEach(wheel => {
-                            const newWheel = document.createElement("IMG");
-                            newWheel.src = wheel.imgSource;
-                            newWheel.classList.add("wheelstandard");
-                            newWheel.id = wheel.idName;
-                            track.appendChild(newWheel);
-
-                            newWheel.onclick = function changeWheels() {
-                                let bgImage = document.querySelector('.carimage')
-                                loader.classList.remove("hide");
-                                let tempImage = new Image(200,100);
-                                tempImage.src = wheel.temp;
-                                tempImage.onload = () => {
-                                    bgImage.style.backgroundImage = wheel.backImage;
-                                    loader.classList.add("hide");
-                                    tempImage.remove();
-                                }
-                            }
-                            
-                        })
-                        console.log(filteredArray);
-
-                    }
+                   filterOperation(option);
                 })
 
                 break;
@@ -297,6 +228,9 @@ filterArray.forEach(filter => {
 
 
 //UPARROW
+
+
+
 uparrow.addEventListener("click", () => {
     index--
     track.style.transform = `translateY(-${index * carouselHeight}px)`
