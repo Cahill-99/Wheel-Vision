@@ -221,16 +221,9 @@ filterArray.forEach(filter => {
 
 
 
-//***ARRAY.FILTER***/
-
-
-
 
 
 //UPARROW
-
-
-
 uparrow.addEventListener("click", () => {
     index--
     track.style.transform = `translateY(-${index * carouselHeight}px)`
