@@ -8,6 +8,8 @@ let track = document.getElementById("track");
 const trackHeight = document.getElementById("track").offsetHeight;
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 const carousel =  document.querySelector(".carousel-container");
+const col2Arr = Array.from(document.getElementsByClassName("col2"));
+console.log(col2Arr);
 
 let loader = document.querySelector('.loading')
 let bgBox = document.querySelector('.carimage')
@@ -88,10 +90,16 @@ fltrIndex++
 
 if (fltrIndex % 2 == 0) {
     track.style.display = "none";
+    col2Arr.forEach(arrow => {
+        arrow.style.display = "none"
+    })
     filterContainer.style.display = "flex";
     filterButton.src = "Assets/Group 25 Active.png";
 } else {
     track.style.display = "flex";
+    col2Arr.forEach(arrow => {
+        arrow.style.display = "block"
+    })
     filterContainer.style.display = "none";
     filterButton.src = "Assets/Group 25.png";
     if (filterOptions !== undefined){
@@ -110,11 +118,15 @@ import { spokesOptionsArray } from "./wheels.js";
 //LOOP THROUGH FILTER ARRAY
 function filterOperation(option) {
     let newOption = document.createElement("button");
-        filterOptions.appendChild(newOption);
-        newOption.innerHTML = option;
-        newOption.classList.add("filterstandard");
+    filterOptions.appendChild(newOption);
+    newOption.innerHTML = option;
+    newOption.classList.add("filterstandard");
     
     newOption.onclick = function filterArray() {
+
+        col2Arr.forEach(arrow => {
+            arrow.style.display = "block"
+        })
         let selectedOption = option;
         console.log(selectedOption);
         filterOptions.style.display ="none";
@@ -122,9 +134,8 @@ function filterOperation(option) {
         filterButton.src = "Assets/Group 25.png";
     
                      
-    
+
         activeArray = wheelsArray.filter(wheel => {
-            
             return wheel.brand === selectedOption;
             
         });
