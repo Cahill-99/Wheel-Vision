@@ -116,30 +116,28 @@ import { colourOptionsArray } from "./wheels.js";
 import { spokesOptionsArray } from "./wheels.js";
 
 //LOOP THROUGH FILTER ARRAY
-function filterOperation(option) {
+function filterOperation(option, filterCategory) {
     let newOption = document.createElement("button");
     filterOptions.appendChild(newOption);
     newOption.innerHTML = option;
+    let selectedOption = option;
     newOption.classList.add("filterstandard");
-    
+
     newOption.onclick = function filterArray() {
 
         col2Arr.forEach(arrow => {
             arrow.style.display = "block"
         })
-        let selectedOption = option;
         console.log(selectedOption);
         filterOptions.style.display ="none";
         fltrIndex++;
         filterButton.src = "Assets/Group 25.png";
-    
-                     
 
+        console.log(filterCategory);
         activeArray = wheelsArray.filter(wheel => {
-            return wheel.brand === selectedOption;
-            
+            return wheel[filterCategory] === selectedOption;
         });
-    
+        
     
         track.remove();
         track = document.createElement("div");
@@ -200,22 +198,26 @@ filterArray.forEach(filter => {
 
         switch (selectedFilter) {
             case "brand":
-                brandOptionsArray.forEach(option => {
-                    filterOperation(option);
+                brandOptionsArray.forEach(option=> {
+                    let brand = "brand"
+                    filterOperation(option, brand);
+
                 })
                 
                 break;
 
             case "colour":
                 colourOptionsArray.forEach(option => {
-                   filterOperation(option);
+                    let colour = "colour"
+                    filterOperation(option, colour);
                 })
 
                 break;
 
             case "spokes":
                 spokesOptionsArray.forEach(option => {
-                   filterOperation(option);
+                    let spokes = "spokes"
+                   filterOperation(option, spokes);
                 })
 
                 break;
