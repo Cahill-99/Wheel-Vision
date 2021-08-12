@@ -9,7 +9,6 @@ const trackHeight = document.getElementById("track").offsetHeight;
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 const carousel =  document.querySelector(".carousel-container");
 const col2Arr = Array.from(document.getElementsByClassName("col2"));
-console.log(col2Arr);
 
 let loader = document.querySelector('.loading')
 let bgBox = document.querySelector('.carimage')
@@ -128,17 +127,24 @@ function filterOperation(option, filterCategory) {
         col2Arr.forEach(arrow => {
             arrow.style.display = "block"
         })
-        console.log(selectedOption);
         filterOptions.style.display ="none";
         fltrIndex++;
         filterButton.src = "Assets/Group 25.png";
 
-        console.log(filterCategory);
         activeArray = wheelsArray.filter(wheel => {
             return wheel[filterCategory] === selectedOption;
         });
-        
-    
+
+        wheelDivision = activeArray.length/4;
+        roundedDivision = Math.ceil(wheelDivision);
+
+        if (roundedDivision === 1) {
+            downarrow.classList.add("hide")
+        } else {
+            downarrow.classList.remove("hide");
+        }
+
+        console.log(roundedDivision);
         track.remove();
         track = document.createElement("div");
         carousel.appendChild(track);
@@ -150,7 +156,6 @@ function filterOperation(option, filterCategory) {
             newWheel.classList.add("wheelstandard");
             newWheel.id = wheel.idName;
             track.appendChild(newWheel);
-            console.log(roundedDivision);
     
             newWheel.onclick = function changeWheels() {
                 let bgImage = document.querySelector('.carimage')
@@ -222,8 +227,7 @@ filterArray.forEach(filter => {
 
                 break;
         }
-        console.log(filterOptions);
-        console.log(selectedFilter);
+
     }
 })
 
