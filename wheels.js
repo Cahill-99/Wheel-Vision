@@ -6,8 +6,8 @@ export let wheelsArray = [
         colour: "SILVER",
         spokes: 6,
         brand: "ENKEI",
-        backImage: "url('./img/Testimage.jpg')",
-        temp: './img/Testimage.jpg'
+        backImage: "url('./img/Chosen_Wheels/wheel1_installed-min.jpg')",
+        temp: './img/Chosen_Wheels/wheel1_installed-min.jpg'
     },
     {
         idName: "wheel2img",
