@@ -115,6 +115,35 @@ import { colourOptionsArray } from "./wheels.js";
 import { spokesOptionsArray } from "./wheels.js";
 
 //LOOP THROUGH FILTER ARRAY
+let trackReset = () => {
+
+        
+    track.remove();
+    track = document.createElement("div");
+    carousel.appendChild(track);
+    track.id = "track";
+
+    activeArray.forEach(wheel => {
+        const newWheel = document.createElement("IMG");
+        newWheel.src = wheel.imgSource;
+        newWheel.classList.add("wheelstandard");
+        newWheel.id = wheel.idName;
+        track.appendChild(newWheel);
+
+        newWheel.onclick = function changeWheels() {
+            let bgImage = document.querySelector('.carimage')
+            loader.classList.remove("hide");
+            let tempImage = new Image(200,100);
+            tempImage.src = wheel.temp;
+            tempImage.onload = () => {
+                bgImage.style.backgroundImage = wheel.backImage;
+                loader.classList.add("hide");
+                tempImage.remove();
+            }
+        }
+                            
+    })
+    }
 function filterOperation(option, filterCategory) {
     let newOption = document.createElement("button");
     filterOptions.appendChild(newOption);
@@ -145,32 +174,9 @@ function filterOperation(option, filterCategory) {
         }
 
         console.log(roundedDivision);
-        track.remove();
-        track = document.createElement("div");
-        carousel.appendChild(track);
-        track.id = "track";
-    
-        activeArray.forEach(wheel => {
-            const newWheel = document.createElement("IMG");
-            newWheel.src = wheel.imgSource;
-            newWheel.classList.add("wheelstandard");
-            newWheel.id = wheel.idName;
-            track.appendChild(newWheel);
-    
-            newWheel.onclick = function changeWheels() {
-                let bgImage = document.querySelector('.carimage')
-                loader.classList.remove("hide");
-                let tempImage = new Image(200,100);
-                tempImage.src = wheel.temp;
-                tempImage.onload = () => {
-                    bgImage.style.backgroundImage = wheel.backImage;
-                    loader.classList.add("hide");
-                    tempImage.remove();
-                }
-            }
-                                
-        })
-                            
+
+        
+        trackReset();              
                             
         console.log(activeArray);
     
@@ -225,6 +231,18 @@ filterArray.forEach(filter => {
                    filterOperation(option, spokes);
                 })
 
+                break;
+            case "reset":
+                activeArray = wheelsArray;
+                filterOptions.style.display ="none";
+                track.style.display = "flex";
+
+                fltrIndex++;
+                filterButton.src = "Assets/Group 25.png";
+                col2Arr.forEach(arrow => {
+                    arrow.style.display = "block"
+                });
+                trackReset();
                 break;
         }
 
