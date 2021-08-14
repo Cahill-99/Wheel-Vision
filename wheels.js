@@ -6,8 +6,8 @@ export let wheelsArray = [
         colour: "SILVER",
         spokes: 6,
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel1 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel1 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel1_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel1_ installed-min.jpg'
     },
     {
         idName: "wheel2img",
@@ -15,8 +15,8 @@ export let wheelsArray = [
         colour: "GREY",
         spokes: 6,
         brand: "WORK",
-        backImage: "url('img/Chosen Wheels/Wheel2 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel2 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel2_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel2_ installed-min.jpg'
     },
     {
         idName: "wheel3img",
@@ -24,8 +24,8 @@ export let wheelsArray = [
         colour: "SILVER",
         spokes: 5,
         brand: "3SDM",
-        backImage: "url('img/Chosen Wheels/Wheel3 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel3 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel3_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel3_ installed-min.jpg'
     },
     {
         idName: "wheel4img",
@@ -33,8 +33,8 @@ export let wheelsArray = [
         colour: "SILVER",
         spokes: "6+",
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel4 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel4 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel4_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel4_ installed-min.jpg'
     },
     {
         idName: "wheel5img",
@@ -42,8 +42,8 @@ export let wheelsArray = [
         colour: "BLACK",
         spokes: "6+",
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel5 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel5 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel5_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel5_ installed-min.jpg'
     },
     {
         idName: "wheel6img",
@@ -51,8 +51,8 @@ export let wheelsArray = [
         colour: "GREY",
         spokes: 6,
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel6 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel6 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel6_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel6_ installed-min.jpg'
     },
     {
         idName: "wheel7img",
@@ -60,8 +60,8 @@ export let wheelsArray = [
         colour: "GOLD",
         spokes: 6,
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel7 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel7 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel7_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel7_ installed-min.jpg'
     },
     {
         idName: "wheel8img",
@@ -69,8 +69,8 @@ export let wheelsArray = [
         colour:"WHITE",
         spokes: 6,
         brand: "ENKEI",
-        backImage: "url('img/Chosen Wheels/Wheel8 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel8 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel8_installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel8_ installed-min.jpg'
     },
     {
         idName: "wheel9img",
@@ -78,8 +78,8 @@ export let wheelsArray = [
         colour: "WHITE",
         spokes: 6,
         brand: "RAYS",
-        backImage: "url('img/Chosen Wheels/Wheel9 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel9 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel9_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel9_ installed-min.jpg'
     },
     {
         idName: "wheel10img",
@@ -87,8 +87,8 @@ export let wheelsArray = [
         colour: "GREY",
         spokes: "6+",
         brand: "RAYS",
-        backImage: "url('img/Chosen Wheels/Wheel10 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel10 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel10_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel10_ installed-min.jpg'
     },
     {
         idName: "wheel11img",
@@ -96,8 +96,8 @@ export let wheelsArray = [
         colour: "BLACK",
         spokes: 5,
         brand: "WORK",
-        backImage: "url('img/Chosen Wheels/Wheel11 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel11 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel11_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel11_ installed-min.jpg'
     },
     {
         idName: "wheel12img",
@@ -105,8 +105,8 @@ export let wheelsArray = [
         colour: "SILVER",
         spokes: 5,
         brand:"WORK",
-        backImage: "url('img/Chosen Wheels/Wheel12 installed-min.jpg')",
-        temp: 'img/Chosen Wheels/Wheel12 installed-min.jpg'
+        backImage: "url('./img/Chosen_Wheels/Wheel12_ installed-min.jpg')",
+        temp: './img/Chosen_Wheels/Wheel12_ installed-min.jpg'
     }
 ];
 
