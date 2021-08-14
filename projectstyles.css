@@ -242,7 +242,7 @@ body{
     justify-content:space-evenly;
     align-items: center;
     grid-area:carimage;
-    background-image: url("img/MySubaru.jpg");
+    background-image: url("img/Chosen_Wheels/Wheel2_installed-min.jpg");
     transition: ease-in;
     background-size:cover;
     background-position:center;
