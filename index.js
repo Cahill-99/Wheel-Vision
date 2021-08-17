@@ -122,6 +122,7 @@ let trackReset = () => {
     track = document.createElement("div");
     carousel.appendChild(track);
     track.id = "track";
+    downarrow.classList.remove("hide");
 
     activeArray.forEach(wheel => {
         const newWheel = document.createElement("IMG");
