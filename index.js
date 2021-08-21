@@ -240,6 +240,7 @@ filterArray.forEach(filter => {
 
                 fltrIndex = 1;
                 filterButton.src = "Assets/Group 25.png";
+                downarrow.style.display = "block";
                 //col2Arr.forEach(arrow => {
                  //   arrow.style.display = "block"
                // });
