@@ -117,7 +117,7 @@ import { spokesOptionsArray } from "./wheels.js";
 //LOOP THROUGH FILTER ARRAY
 let trackReset = () => {
 
-        
+    console.log("hello");
     track.remove();
     track = document.createElement("div");
     carousel.appendChild(track);
