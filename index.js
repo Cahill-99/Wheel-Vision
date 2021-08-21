@@ -244,7 +244,7 @@ filterArray.forEach(filter => {
                 //col2Arr.forEach(arrow => {
                  //   arrow.style.display = "block"
                // });
-               console.log(activeArray);
+               console.log("hello");
                 trackReset();
                 break;
         }
