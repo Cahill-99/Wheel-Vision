@@ -238,12 +238,13 @@ filterArray.forEach(filter => {
                 filterOptions.style.display ="none";
                 track.style.display = "flex";
 
-                fltrIndex = 1;
+                fltrIndex++;
                 filterButton.src = "Assets/Group 25.png";
                 downarrow.style.display = "block";
                 //col2Arr.forEach(arrow => {
                  //   arrow.style.display = "block"
                // });
+               console.log(activeArray);
                 trackReset();
                 break;
         }
