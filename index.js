@@ -163,7 +163,11 @@ let arrowReset = () => {
 function filterOperation(option, filterCategory) {
     let newOption = document.createElement("button");
     filterOptions.appendChild(newOption);
+    if (option === "RESET") {
+        newOption.innerHTML = "SHOW ALL";
+    } else {
     newOption.innerHTML = option;
+    };
     let selectedOption = option;
     newOption.classList.add("filterstandard");
 
