@@ -28,6 +28,8 @@ loadRemove()
 
 
 
+
+
 //*** SIDEBAR WHEELS ***
 
 
@@ -113,11 +115,11 @@ import { filterArray } from "./wheels.js";
 import { brandOptionsArray } from "./wheels.js";
 import { colourOptionsArray } from "./wheels.js";
 import { spokesOptionsArray } from "./wheels.js";
+import { resetOptionsArray } from "./wheels.js";
 
 //LOOP THROUGH FILTER ARRAY
 let trackReset = () => {
 
-    console.log("hello");
     track.remove();
     track = document.createElement("div");
     carousel.appendChild(track);
@@ -145,6 +147,19 @@ let trackReset = () => {
                             
     })
     }
+
+let arrowReset = () => {
+        wheelDivision = activeArray.length/4;
+        roundedDivision = Math.ceil(wheelDivision);
+        downarrow.classList.remove("hide");
+
+       // if (roundedDivision === 1) {
+         //   downarrow.classList.add("hide")
+       // } else {
+         //   downarrow.classList.remove("hide");
+       // }
+};
+
 function filterOperation(option, filterCategory) {
     let newOption = document.createElement("button");
     filterOptions.appendChild(newOption);
@@ -208,6 +223,9 @@ filterArray.forEach(filter => {
         filterOptions.classList.add("filteroptions");
         carousel.appendChild(filterOptions);
 
+
+
+
         switch (selectedFilter) {
             case "brand":
                 brandOptionsArray.forEach(option=> {
@@ -229,23 +247,25 @@ filterArray.forEach(filter => {
             case "spokes":
                 spokesOptionsArray.forEach(option => {
                     let spokes = "spokes"
+
                    filterOperation(option, spokes);
                 })
 
                 break;
             case "reset":
-                activeArray = wheelsArray;
-                filterOptions.style.display ="none";
-                track.style.display = "flex";
+                resetOptionsArray.forEach(option => {
+                    let reset = "reset"
+                    console.log(option);
+                    filterOperation(option, reset);
+                })
+                //activeArray = wheelsArray;
+               // filterOptions.style.display ="none";
+                //track.style.display = "flex";
 
-                fltrIndex++;
-                filterButton.src = "Assets/Group 25.png";
-                downarrow.style.display = "block";
-                //col2Arr.forEach(arrow => {
-                 //   arrow.style.display = "block"
-               // });
-               console.log("hello");
-                trackReset();
+               // fltrIndex++;
+                //filterButton.src = "Assets/Group 25.png";
+               // trackReset();
+                //arrowReset();
                 break;
         }
 

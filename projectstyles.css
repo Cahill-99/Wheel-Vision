@@ -198,14 +198,6 @@ body{
     flex-direction:column;
 }
 
-.wheelscroll{
-   /* height: 66vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-evenly; */
-}
-
-
 
 .downarrow{
     grid-area:downarrow;

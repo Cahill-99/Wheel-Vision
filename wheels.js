@@ -7,7 +7,9 @@ export let wheelsArray = [
         spokes: 6,
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel1_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel1_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel1_installed-min.jpg',
+        reset: "reset"
+        
     },
     {
         idName: "wheel2img",
@@ -16,7 +18,8 @@ export let wheelsArray = [
         spokes: 6,
         brand: "WORK",
         backImage: "url('./img/Chosen_Wheels/wheel2_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel2_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel2_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel3img",
@@ -25,7 +28,8 @@ export let wheelsArray = [
         spokes: 5,
         brand: "3SDM",
         backImage: "url('./img/Chosen_Wheels/wheel3_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel3_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel3_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel4img",
@@ -34,7 +38,8 @@ export let wheelsArray = [
         spokes: "6+",
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel4_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel4_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel4_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel5img",
@@ -43,7 +48,8 @@ export let wheelsArray = [
         spokes: "6+",
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel5_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel5_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel5_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel6img",
@@ -52,7 +58,8 @@ export let wheelsArray = [
         spokes: 6,
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel6_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel6_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel6_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel7img",
@@ -61,7 +68,8 @@ export let wheelsArray = [
         spokes: 6,
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel7_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel7_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel7_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel8img",
@@ -70,7 +78,8 @@ export let wheelsArray = [
         spokes: 6,
         brand: "ENKEI",
         backImage: "url('./img/Chosen_Wheels/wheel8_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel8_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel8_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel9img",
@@ -79,7 +88,8 @@ export let wheelsArray = [
         spokes: 6,
         brand: "RAYS",
         backImage: "url('./img/Chosen_Wheels/wheel9_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel9_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel9_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel10img",
@@ -88,7 +98,8 @@ export let wheelsArray = [
         spokes: "6+",
         brand: "RAYS",
         backImage: "url('./img/Chosen_Wheels/wheel10_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel10_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel10_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel11img",
@@ -97,7 +108,8 @@ export let wheelsArray = [
         spokes: 5,
         brand: "WORK",
         backImage: "url('./img/Chosen_Wheels/wheel11_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel11_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel11_installed-min.jpg',
+        reset: "reset"
     },
     {
         idName: "wheel12img",
@@ -106,7 +118,8 @@ export let wheelsArray = [
         spokes: 5,
         brand:"WORK",
         backImage: "url('./img/Chosen_Wheels/wheel12_installed-min.jpg')",
-        temp: './img/Chosen_Wheels/wheel12_installed-min.jpg'
+        temp: './img/Chosen_Wheels/wheel12_installed-min.jpg',
+        reset: "reset"
     }
 ];
 
@@ -138,3 +151,5 @@ export const brandOptionsArray = ["3SDM", "ENKEI", "RAYS", "WORK"];
 export const colourOptionsArray = ["BLACK", "GOLD", "GREY", "SILVER", "WHITE"];
 
 export const spokesOptionsArray = [5, 6, "6+"];
+
+export const resetOptionsArray = ["reset"];
