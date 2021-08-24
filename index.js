@@ -41,10 +41,12 @@ loadRemove()
 //WHEEL OBJECTS ARRAY
 
 import { wheelsArray } from "./wheels.js"
+let activeArray = wheelsArray;
+
 
 
 //LOOP THROUGH WHEELS ARRAY
-let activeArray = wheelsArray;
+
 activeArray.forEach(wheel => {
         let newWheel = document.createElement("IMG");
         
@@ -55,7 +57,10 @@ activeArray.forEach(wheel => {
 
         let bgImage = document.querySelector('.carimage')
         newWheel.onclick = function changeWheels() {
-            
+            for (let i = 0; i < activeArray.length; i++) {
+                newWheel.style.backgroundColor = "black";
+            }
+            //newWheel.style.backgroundColor = "black"
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
             tempImage.src = wheel.temp;
@@ -134,6 +139,7 @@ let trackReset = () => {
         track.appendChild(newWheel);
 
         newWheel.onclick = function changeWheels() {
+            newWheel.style.backgroundColor = "black";
             let bgImage = document.querySelector('.carimage')
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
