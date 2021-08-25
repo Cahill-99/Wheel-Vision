@@ -57,10 +57,7 @@ activeArray.forEach(wheel => {
 
         let bgImage = document.querySelector('.carimage')
         newWheel.onclick = function changeWheels() {
-            for (let i = 0; i < activeArray.length; i++) {
-                newWheel.style.backgroundColor = "black";
-            }
-            //newWheel.style.backgroundColor = "black"
+            
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
             tempImage.src = wheel.temp;
