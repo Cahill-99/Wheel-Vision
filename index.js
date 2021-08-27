@@ -145,7 +145,6 @@ let trackReset = () => {
         track.appendChild(newWheel);
 
         newWheel.onclick = function changeWheels() {
-            newWheel.style.backgroundColor = "black";
             let bgImage = document.querySelector('.carimage')
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
