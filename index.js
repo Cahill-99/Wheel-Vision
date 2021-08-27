@@ -33,13 +33,13 @@ loadRemove()
 //*** SIDEBAR WHEELS ***
 let buttonClicked = null;
 
-let highlightButton = (element) => {
-    if (buttonClicked != null) {
-        buttonClicked.style.backgroundColor = "grey";
-    }
-    buttonClicked = element;
-      buttonClicked.style.backgroundColor = "red";
-}
+//let highlightButton = (element) => {
+    //if (buttonClicked != null) {
+        //buttonClicked.style.backgroundColor = "grey";
+  //  }
+   // buttonClicked = element;
+     // buttonClicked.style.backgroundColor = "red";
+//}
 
 
 
