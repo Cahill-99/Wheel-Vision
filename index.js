@@ -31,9 +31,15 @@ loadRemove()
 
 
 //*** SIDEBAR WHEELS ***
+let buttonClicked = null;
 
-
-
+let highlightButton = (element) => {
+    if (buttonClicked != null) {
+        buttonClicked.style.backgroundColor = "grey";
+    }
+    buttonClicked = element;
+      buttonClicked.style.backgroundColor = "red";
+}
 
 
 
@@ -57,7 +63,6 @@ activeArray.forEach(wheel => {
 
         let bgImage = document.querySelector('.carimage')
         newWheel.onclick = function changeWheels() {
-            
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
             tempImage.src = wheel.temp;
@@ -66,6 +71,10 @@ activeArray.forEach(wheel => {
                 loader.classList.add("hide");
                 tempImage.remove();
             }
+            buttonClicked = newWheel.id;
+            let element = buttonClicked;
+            console.log(buttonClicked);
+            highlightButton(element);
         }
     });
 
