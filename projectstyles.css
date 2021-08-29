@@ -56,6 +56,11 @@ body{
     cursor:pointer;
 }
 
+.caliperstandard{
+    height: 12vh;
+    cursor:pointer;
+}
+
 .filterstandard{
     border: 3px solid #929292;
     border-radius:20%;
@@ -101,7 +106,9 @@ body{
 
 }
 
-
+.calipericonimg{
+    cursor:pointer;
+}
 
 .uparrow{
 
@@ -211,7 +218,6 @@ body{
 }
 
 .downarrowimg.hide{
-    filter: brightness(30%);
     display:none;
 }
 

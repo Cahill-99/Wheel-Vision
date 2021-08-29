@@ -153,3 +153,34 @@ export const colourOptionsArray = ["BLACK", "GOLD", "GREY", "SILVER", "WHITE"];
 export const spokesOptionsArray = [5, 6, "6+"];
 
 export const resetOptionsArray = ["RESET"];
+
+
+
+
+
+
+
+
+export let calipersArray = [
+
+    {
+        idName: "caliper1img",
+        imgSource:"img/RedCaliper.png",
+        colour: "RED"
+    },
+    {
+        idName: "caliper2img",
+        imgSource:"img/BlueCaliper.png",
+        colour: "BLUE"
+    },
+    {
+        idName: "caliper3img",
+        imgSource:"img/YellowCaliper.png",
+        colour: "YELLOW"
+    },
+    {
+        idName: "caliper4img",
+        imgSource:"img/GreenCaliper.png",
+        colour: "GREEN"
+    },
+]

@@ -125,8 +125,9 @@ let trackReset = () => {
     track = document.createElement("div");
     carousel.appendChild(track);
     track.id = "track";
-    
+}
 
+let activeWheels = () => {
     activeArray.forEach(wheel => {
         const newWheel = document.createElement("IMG");
         newWheel.src = wheel.imgSource;
@@ -149,17 +150,6 @@ let trackReset = () => {
     })
     }
 
-let arrowReset = () => {
-        wheelDivision = activeArray.length/4;
-        roundedDivision = Math.ceil(wheelDivision);
-        downarrow.classList.remove("hide");
-
-       // if (roundedDivision === 1) {
-         //   downarrow.classList.add("hide")
-       // } else {
-         //   downarrow.classList.remove("hide");
-       // }
-};
 
 function filterOperation(option, filterCategory) {
     let newOption = document.createElement("button");
@@ -200,7 +190,8 @@ function filterOperation(option, filterCategory) {
         console.log(roundedDivision);
 
         
-        trackReset();              
+        trackReset();
+        activeWheels();              
                             
         console.log(activeArray);
     
@@ -284,6 +275,62 @@ filterArray.forEach(filter => {
 
 
 
+// TOGGLE CALIPERS OR WHEELS
+
+import { calipersArray } from "./wheels.js";
+
+let caliperIcon = document.querySelector(".calipericonimg");
+let wheelIcon = document.querySelector(".wheeliconimg");
+
+let caliperBg = document.querySelector(".calipericon");
+let wheelBg = document.querySelector(".wheelicon");
+
+caliperIcon.onclick = function switchToCalipers() {
+
+    trackReset();
+    filterContainer.style.display = "none";
+
+    caliperBg.style.backgroundColor = "#2b2b2b";
+    wheelBg.style.backgroundColor = "#161616"
+
+    calipersArray.forEach(item => {
+        let newCaliper = document.createElement("IMG");
+            
+        newCaliper.src = item.imgSource;
+        newCaliper.classList.add("caliperstandard");
+        newCaliper.id = item.idName;
+        track.appendChild(newCaliper);
+
+        col2Arr.forEach(arrow => {
+            arrow.style.display = "none"
+        });
+
+    })
+}
+
+wheelIcon.onclick = function switchToWheels() {
+    
+    trackReset();
+    activeWheels();
+    index = 0;
+    wheelDivision = activeArray.length/4;
+    roundedDivision = Math.ceil(wheelDivision);
+
+        col2Arr.forEach(arrow => {
+            arrow.style.display = "block"
+       });
+
+    uparrow.style.display = "none";
+    if (roundedDivision > 1) {
+        downarrow.style.display = "block";
+        downarrow.classList.remove("hide");
+    }
+        
+
+    
+    console.log
+    console.log(roundedDivision);
+}
 
 
 
@@ -297,20 +344,23 @@ uparrow.addEventListener("click", () => {
 
     if(index === 0) {
         uparrow.classList.remove("show");
+        uparrow.style.display = "none";
     }
-    
+    console.log(index);
 })
 
 //DOWNARROW
 downarrow.addEventListener("click", () => {
     index++;
     uparrow.classList.add("show");
+    uparrow.style.display = "block"
     track.style.transform = `translateY(-${index * carouselHeight}px)`;
     
-    if (roundedDivision - 1 === index) {
+    if (roundedDivision - 1 === index ) {
         downarrow.classList.add("hide")
     }
-    
+    console.log(index);
+    console.log(roundedDivision)
 })
 
 
