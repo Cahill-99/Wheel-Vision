@@ -5,13 +5,11 @@ const uparrow = document.querySelector(".uparrowimg");
 const downarrow = document.querySelector(".downarrowimg");
 
 let track = document.getElementById("track");
-const trackHeight = document.getElementById("track").offsetHeight;
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 const carousel =  document.querySelector(".carousel-container");
 const col2Arr = Array.from(document.getElementsByClassName("col2"));
 
 let loader = document.querySelector('.loading')
-let bgBox = document.querySelector('.carimage')
 
 let body = document.getElementsByTagName("BODY")[0];
 
@@ -31,15 +29,8 @@ loadRemove()
 
 
 //*** SIDEBAR WHEELS ***
-let buttonClicked = null;
 
-//let highlightButton = (element) => {
-    //if (buttonClicked != null) {
-        //buttonClicked.style.backgroundColor = "grey";
-  //  }
-   // buttonClicked = element;
-     // buttonClicked.style.backgroundColor = "red";
-//}
+
 
 
 
@@ -48,6 +39,7 @@ let buttonClicked = null;
 
 import { wheelsArray } from "./wheels.js"
 let activeArray = wheelsArray;
+
 
 
 
@@ -62,6 +54,7 @@ activeArray.forEach(wheel => {
         track.appendChild(newWheel);
 
         let bgImage = document.querySelector('.carimage')
+        
         newWheel.onclick = function changeWheels() {
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
@@ -71,10 +64,7 @@ activeArray.forEach(wheel => {
                 loader.classList.add("hide");
                 tempImage.remove();
             }
-            buttonClicked = newWheel.id;
-            let element = buttonClicked;
-            console.log(buttonClicked);
-            highlightButton(element);
+
         }
     });
 
@@ -198,12 +188,15 @@ function filterOperation(option, filterCategory) {
         wheelDivision = activeArray.length/4;
         roundedDivision = Math.ceil(wheelDivision);
 
+        uparrow.classList.remove("show");
+
         if (roundedDivision === 1) {
             downarrow.classList.add("hide")
         } else {
             downarrow.classList.remove("hide");
         }
 
+        index = 0;
         console.log(roundedDivision);
 
         
