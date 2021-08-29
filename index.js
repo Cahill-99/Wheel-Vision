@@ -257,14 +257,7 @@ filterArray.forEach(filter => {
                     console.log(option);
                     filterOperation(option, reset);
                 })
-                //activeArray = wheelsArray;
-               // filterOptions.style.display ="none";
-                //track.style.display = "flex";
 
-               // fltrIndex++;
-                //filterButton.src = "Assets/Group 25.png";
-               // trackReset();
-                //arrowReset();
                 break;
         }
 
@@ -285,13 +278,24 @@ let wheelIcon = document.querySelector(".wheeliconimg");
 let caliperBg = document.querySelector(".calipericon");
 let wheelBg = document.querySelector(".wheelicon");
 
+let backBg = document.querySelector(".backbutton");
+let colFiller = document.querySelector(".colfiller");
+
+
 caliperIcon.onclick = function switchToCalipers() {
+
 
     trackReset();
     filterContainer.style.display = "none";
 
     caliperBg.style.backgroundColor = "#2b2b2b";
-    wheelBg.style.backgroundColor = "#161616"
+    wheelBg.style.backgroundColor = "#161616";
+    wheelIcon.style.height = "60px";
+    caliperIcon.style.height = "80px";
+    backBg.classList.add("removeedges");
+    wheelBg.classList.add("roundEdges");
+
+    colFiller.classList.add("colfillerround");
 
     calipersArray.forEach(item => {
         let newCaliper = document.createElement("IMG");
@@ -308,10 +312,22 @@ caliperIcon.onclick = function switchToCalipers() {
     })
 }
 
+
 wheelIcon.onclick = function switchToWheels() {
-    
+
     trackReset();
     activeWheels();
+
+    caliperBg.style.backgroundColor = "#161616";
+    wheelBg.style.backgroundColor = "#2b2b2b";
+    wheelIcon.style.height = "80px";
+    caliperIcon.style.height = "60px";
+
+    backBg.classList.remove("removeedges");
+    colFiller.classList.remove("colfillerround");
+
+    
+
     index = 0;
     wheelDivision = activeArray.length/4;
     roundedDivision = Math.ceil(wheelDivision);
@@ -338,7 +354,7 @@ wheelIcon.onclick = function switchToWheels() {
 
 //UPARROW
 uparrow.addEventListener("click", () => {
-    index--
+    index--;
     track.style.transform = `translateY(-${index * carouselHeight}px)`
     downarrow.classList.remove("hide");
 
@@ -357,7 +373,7 @@ downarrow.addEventListener("click", () => {
     track.style.transform = `translateY(-${index * carouselHeight}px)`;
     
     if (roundedDivision - 1 === index ) {
-        downarrow.classList.add("hide")
+        downarrow.classList.add("hide");
     }
     console.log(index);
     console.log(roundedDivision)
