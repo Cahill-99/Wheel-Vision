@@ -82,10 +82,10 @@ activeArray.forEach(wheel => {
 
 //*** FILTER ***
 
-let filterButton = document.querySelector(".filtericonimg");
+let middleButton = document.querySelector(".middlebuttonimg");
 let fltrIndex = 1;
 
-filterButton.onclick = function toggleFilter() {
+middleButton.onclick = function toggleFilter() {
 
 fltrIndex++
 
@@ -96,14 +96,14 @@ if (fltrIndex % 2 == 0) {
         arrow.style.display = "none"
     })
     filterContainer.style.display = "flex";
-    filterButton.src = "Assets/Group 25 Active.png";
+    middleButton.src = "Assets/Group 25 Active.png";
 } else {
     track.style.display = "flex";
     col2Arr.forEach(arrow => {
         arrow.style.display = "block"
     })
     filterContainer.style.display = "none";
-    filterButton.src = "Assets/Group 25.png";
+    middleButton.src = "Assets/Group 25.png";
     if (filterOptions !== undefined){
         filterOptions.remove();
     }
@@ -169,7 +169,7 @@ function filterOperation(option, filterCategory) {
         })
         filterOptions.style.display ="none";
         fltrIndex++;
-        filterButton.src = "Assets/Group 25.png";
+        middleButton.src = "Assets/Group 25.png";
 
         activeArray = wheelsArray.filter(wheel => {
             return wheel[filterCategory] === selectedOption;
