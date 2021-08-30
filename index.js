@@ -310,6 +310,8 @@ caliperIcon.onclick = function switchToCalipers() {
         });
 
     })
+
+    middleButton.src = "Assets/Group 25 Reset";
 }
 
 
