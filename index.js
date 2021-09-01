@@ -82,11 +82,17 @@ activeArray.forEach(wheel => {
 
 //*** FILTER ***
 
+let filterContainer = document.createElement("DIV");
+filterContainer.classList.add("filtercontainer");
+carousel.appendChild(filterContainer);
+let filterOptions;
+
 let middleButton = document.querySelector(".middlebuttonimg");
 let fltrIndex = 1;
 
+if (middleButton.src !== "Assets/Group 25 Reset.png"){
 middleButton.onclick = function toggleFilter() {
-
+console.log(middleButton.src)
 fltrIndex++
 
 
@@ -107,6 +113,7 @@ if (fltrIndex % 2 == 0) {
     if (filterOptions !== undefined){
         filterOptions.remove();
     }
+}
 }
 }
 
@@ -201,10 +208,7 @@ function filterOperation(option, filterCategory) {
 
 
 
-let filterContainer = document.createElement("DIV");
-filterContainer.classList.add("filtercontainer");
-carousel.appendChild(filterContainer);
-let filterOptions;
+
 
 filterArray.forEach(filter => {
     let newFilter = document.createElement("button");
@@ -311,7 +315,7 @@ caliperIcon.onclick = function switchToCalipers() {
 
     })
 
-    middleButton.src = "Assets/Group 25 Reset";
+    middleButton.src = "Assets/Group 25 Reset.png";
 }
 
 
@@ -344,7 +348,7 @@ wheelIcon.onclick = function switchToWheels() {
         downarrow.classList.remove("hide");
     }
         
-
+    middleButton.src = "Assets/Group 25.png";
     
     console.log
     console.log(roundedDivision);
