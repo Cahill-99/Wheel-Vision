@@ -31,7 +31,7 @@ loadRemove()
 //*** SIDEBAR WHEELS ***
 
 
-
+//let shownWheels = document.querySelector(".displayed-wheels");
 
 
 
@@ -143,6 +143,10 @@ let activeWheels = () => {
         track.appendChild(newWheel);
 
         newWheel.onclick = function changeWheels() {
+
+           // shownWheels.classList.toggle("show");
+           // newWheel.classList.toggle("selected");
+
             let bgImage = document.querySelector('.carimage')
             loader.classList.remove("hide");
             let tempImage = new Image(200,100);
@@ -388,19 +392,15 @@ downarrow.addEventListener("click", () => {
 
 //***** WHEEL SHOW AND HIDE *****
 
-/*
-let shownWheels = document.querySelector(".displayed-wheels");
-let wheelChoice = document.querySelector(".wheel2img");
 
-wheelChoice.addEventListener("click", () => {
-    shownWheels.classList.toggle("show");
-    wheelChoice.classList.toggle("selected");
-})
+
+
+
 
 
 //***** DRAGGABLE WHEELS *****
 
-
+/*
 //FRONT OR REAR
 let activeWheel = document.querySelector(".front-wheel");
 
@@ -433,6 +433,6 @@ function mouseDown(e) {
         window.removeEventListener("mouseup", mouseUp);
     }
 }
-*/
 
+*/
 
