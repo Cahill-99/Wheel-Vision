@@ -159,6 +159,20 @@ let activeWheels = () => {
         }
                             
     })
+    index = 0;
+    wheelDivision = activeArray.length/4;
+    roundedDivision = Math.ceil(wheelDivision);
+
+        col2Arr.forEach(arrow => {
+            arrow.style.display = "block"
+            uparrow.style.display = "none";
+       });
+
+
+    if (roundedDivision > 1) {
+        downarrow.style.display = "block";
+        downarrow.classList.remove("hide");
+    }
     }
 
 
@@ -338,19 +352,7 @@ wheelIcon.onclick = function switchToWheels() {
 
     
 
-    index = 0;
-    wheelDivision = activeArray.length/4;
-    roundedDivision = Math.ceil(wheelDivision);
-
-        col2Arr.forEach(arrow => {
-            arrow.style.display = "block"
-       });
-
-    uparrow.style.display = "none";
-    if (roundedDivision > 1) {
-        downarrow.style.display = "block";
-        downarrow.classList.remove("hide");
-    }
+    
         
     middleButton.src = "Assets/Group 25.png";
     
