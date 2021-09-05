@@ -1,5 +1,5 @@
 
-//***** CAROUSEL ******
+//***** DECLARATIONS ******
 
 const uparrow = document.querySelector(".uparrowimg");
 const downarrow = document.querySelector(".downarrowimg");
@@ -8,6 +8,9 @@ let track = document.getElementById("track");
 const carouselHeight = document.querySelector(".carousel-container").offsetHeight;
 const carousel =  document.querySelector(".carousel-container");
 const col2Arr = Array.from(document.getElementsByClassName("col2"));
+
+const backBtn = document.querySelector(".backbuttonimg");
+const bgImage = document.querySelector('.carimage')
 
 let loader = document.querySelector('.loading')
 
@@ -24,7 +27,14 @@ loadRemove()
 
 
 
+backBtn.onclick = function showElement() {
+    let testElement = document.createElement("IMG");
+    testElement.src = "img/YellowCaliper.png"
+    testElement.classList.add("activecaliper");
+    bgImage.appendChild(testElement);
 
+
+}
 
 
 
@@ -53,7 +63,6 @@ activeArray.forEach(wheel => {
         newWheel.id = wheel.idName;
         track.appendChild(newWheel);
 
-        let bgImage = document.querySelector('.carimage')
         
         newWheel.onclick = function changeWheels() {
             loader.classList.remove("hide");

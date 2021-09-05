@@ -338,3 +338,9 @@ body{
     background-color: #454545;
 }
 
+.activecaliper{
+    position:sticky;
+    height:12%;
+    top: 60%;
+}
+
