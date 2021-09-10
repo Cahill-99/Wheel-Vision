@@ -59,6 +59,8 @@ body{
 .caliperstandard{
     height: 12vh;
     cursor:pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .filterstandard{
