@@ -91,9 +91,8 @@ activeArray.forEach(wheel => {
 
 //*** FILTER ***
 
-let filterContainer = document.createElement("DIV");
-filterContainer.classList.add("filtercontainer");
-carousel.appendChild(filterContainer);
+let filterContainer = document.createElement("DIV");               /* MIDDLE BUTTON*/
+
 let filterOptions;
 
 let middleButton = document.querySelector(".middlebuttonimg");
@@ -103,6 +102,11 @@ if (middleButton.src !== "Assets/Group 25 Reset.png"){
 middleButton.onclick = function toggleFilter() {
 console.log(middleButton.src)
 fltrIndex++
+
+
+filterContainer.classList.add("filtercontainer");
+carousel.appendChild(filterContainer);
+//filterContainer.style.display = "flex";
 
 
 if (fltrIndex % 2 == 0) {
@@ -223,6 +227,7 @@ function filterOperation(option, filterCategory) {
         index = 0;
         console.log(roundedDivision);
 
+        filterContainer.remove();
         
         trackReset();
         activeWheels();              
@@ -317,7 +322,7 @@ caliperIcon.onclick = function switchToCalipers() {
 
 
     trackReset();
-    filterContainer.style.display = "none";
+
 
     caliperBg.style.backgroundColor = "#2b2b2b";
     wheelBg.style.backgroundColor = "#161616";
@@ -350,6 +355,7 @@ wheelIcon.onclick = function switchToWheels() {
 
     trackReset();
     activeWheels();
+
 
     caliperBg.style.backgroundColor = "#161616";
     wheelBg.style.backgroundColor = "#2b2b2b";

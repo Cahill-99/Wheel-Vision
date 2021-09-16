@@ -74,7 +74,7 @@ body{
 }
 
 .filtercontainer{
-    height:44vh;
+    height:34vh;
     width:15vh;
     display:flex;
     flex-direction: column;
