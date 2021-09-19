@@ -25,10 +25,11 @@ body.onload = () => {
 loadRemove()
 }
 
+let testElement;
 
 
 backBtn.onclick = function showElement() {
-    let testElement = document.createElement("IMG");
+    testElement = document.createElement("IMG");
     testElement.src = "img/YellowCaliper.png"
     testElement.classList.add("activecaliper");
     bgImage.appendChild(testElement);
@@ -417,12 +418,12 @@ downarrow.addEventListener("click", () => {
 
 //***** DRAGGABLE WHEELS *****
 
-/*
+
 //FRONT OR REAR
 let activeWheel = document.querySelector(".front-wheel");
 
 //FRONT WHEEL
-const el = activeWheel;
+const el = document.querySelector(".activeCaliper");
 el.addEventListener("mousedown", mouseDown);
 
 function mouseDown(e) {
@@ -451,5 +452,5 @@ function mouseDown(e) {
     }
 }
 
-*/
+
 
