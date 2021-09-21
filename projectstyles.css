@@ -96,7 +96,7 @@ body{
 
 .backbuttonimg{
     grid-area:backarrow;
-    height:50px;
+    height:7vh;
     background-color:#161616;
     margin:auto;
     margin-left:50px;
@@ -124,8 +124,10 @@ body{
 }
 .uparrowimg{
     grid-area:uparrow;
-    height:80px;
+    height:11vh;
     display:none;
+    margin-left:5vw;
+    margin-right:5vw;
 
 }
 .uparrowimg.show{
@@ -142,7 +144,7 @@ body{
     height:60px;
 }
 .logoimg{
-    height:60px;
+    height:9vh;
 }
 
 
@@ -159,7 +161,7 @@ body{
 }
 
 .wheeliconimg{
-    height:80px;
+    height:10vh;
     cursor:pointer;
     transition: height 0.3s ;
     -webkit-transition: -webkit-transform .5s ease-in-out;
@@ -180,7 +182,7 @@ body{
     border-top-right-radius: 8px;
 }
 .calipericonimg{
-    height:60px;
+    height:9vh;
     cursor:pointer;
     transition: height 0.25s;
     transition: all .3s ease-in-out;
@@ -203,7 +205,7 @@ body{
 
 .middlebuttonimg{
     grid-area:filtericon;
-    height:60px;
+    height:8vh;
     cursor: pointer;
 }
 
@@ -240,8 +242,10 @@ body{
 }
 
 .downarrowimg{
-    height:80px;
+    height:11vh;
     cursor:pointer;
+    margin-left:5vw;
+    margin-right:5vw;
 }
 
 .downarrowimg.hide{
@@ -346,3 +350,57 @@ body{
     top: 60%;
 }
 
+.mobile-message{
+    height:100vh;
+    width:60vw;
+    display:none;
+    margin:auto;
+}
+.popup{
+    height:100vh;
+    width:70vw;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    
+}
+h1{
+    text-align:center;
+    color:white;
+    font-size:45px;
+}
+.infotext{
+    color:white;
+    text-align:center;
+    font-size:20px;
+}
+.phone-container{
+    height:50%;
+    display:flex;
+    flex-direction:column;
+
+}
+.turnphoneimg{
+    height:40vh;
+    margin:auto;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width:550px){
+
+    .grid{
+        display:none;
+
+    }
+    .mobile-message{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+
+    }
+
+    
+
+}
