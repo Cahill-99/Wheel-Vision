@@ -25,17 +25,17 @@ body.onload = () => {
 loadRemove()
 }
 
-let testElement;
+// let testElement;
 
 
-backBtn.onclick = function showElement() {
-    testElement = document.createElement("IMG");
-    testElement.src = "img/YellowCaliper.png"
-    testElement.classList.add("activecaliper");
-    bgImage.appendChild(testElement);
+// backBtn.onclick = function showElement() {
+//     testElement = document.createElement("IMG");
+//     testElement.src = "img/YellowCaliper.png"
+//     testElement.classList.add("activecaliper");
+//     bgImage.appendChild(testElement);
 
 
-}
+// }
 
 
 
